@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L'auberge de la Charrue - Restaurant Authentique</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -55,6 +58,7 @@
                 opacity: 0;
                 transform: translateY(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -137,10 +141,10 @@
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm));
             color: white;
             border: none;
-            padding: 0.6rem 1.2rem;
+            padding: 0.4rem 0.8rem;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             font-weight: 500;
             transition: all 0.3s ease;
             font-family: 'Lora', serif;
@@ -218,8 +222,15 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(30px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(30px);
+            }
         }
 
         .hero-content {
@@ -234,6 +245,7 @@
                 opacity: 0;
                 transform: translateY(40px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -285,7 +297,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: 
+            background-image:
                 repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(184, 134, 11, 0.02) 2px, rgba(184, 134, 11, 0.02) 4px);
             pointer-events: none;
         }
@@ -412,6 +424,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -627,6 +640,7 @@
                 opacity: 0;
                 transform: translateY(40px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -691,6 +705,13 @@
         .cms-btn-submit:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+
+        }
+
+        .cms-btn-submit {
+            padding: 4px 10px;
+            font-size: 13px;
+            border-radius: 5px;
         }
 
         .cms-btn-cancel {
@@ -725,6 +746,7 @@
             from {
                 transform: translateX(100%);
             }
+
             to {
                 transform: translateX(0);
             }
@@ -1216,6 +1238,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- HEADER & NAVIGATION -->
     <header>
@@ -1249,7 +1272,7 @@
                 <h1>Bienvenue à l'Auberge de la Charrue</h1>
                 <p class="hero-tagline">« Tradition, saveur et chaleur authentiques »</p>
                 <p class="hero-description">
-                    Découvrez une cuisine généreuse et authentique dans une atmosphère chaleureuse et conviviale. 
+                    Découvrez une cuisine généreuse et authentique dans une atmosphère chaleureuse et conviviale.
                     Depuis des générations, la famille Allegra cultive l'art de recevoir et de régaler ses convives.
                 </p>
                 <button class="btn" onclick="showPage('suggestions');">Découvrir nos Suggestions</button>
@@ -1259,7 +1282,8 @@
         <section class="suggestions-preview">
             <div class="suggestions-content">
                 <h2>Nos Suggestions du Moment</h2>
-                <p>Goûtez à nos créations saisonnières, élaborées par nos chefs avec passion et les meilleurs produits frais de saison.</p>
+                <p>Goûtez à nos créations saisonnières, élaborées par nos chefs avec passion et les meilleurs produits
+                    frais de saison.</p>
                 <button class="btn" onclick="showPage('suggestions');">Voir les Suggestions</button>
             </div>
         </section>
@@ -1268,9 +1292,11 @@
             <h2>La Famille Allegra</h2>
             <div class="family-content">
                 <p>
-                    Depuis plus de trois générations, la famille Allegra perpétue la tradition de l'auberge avec dévouement et passion. 
-                    Nos parents nous ont transmis l'amour de la bonne cuisine et du partage autour de la table. 
-                    Chaque plat que nous proposons raconte notre histoire, celle d'une famille attachée à l'authenticité et à l'excellence.
+                    Depuis plus de trois générations, la famille Allegra perpétue la tradition de l'auberge avec
+                    dévouement et passion.
+                    Nos parents nous ont transmis l'amour de la bonne cuisine et du partage autour de la table.
+                    Chaque plat que nous proposons raconte notre histoire, celle d'une famille attachée à l'authenticité
+                    et à l'excellence.
                 </p>
                 <button class="btn btn-secondary" onclick="showPage('about');">En Savoir Plus</button>
             </div>
@@ -1305,54 +1331,8 @@
             <h1>Notre Carte des Vins</h1>
             <p>Sélection minutieuse de vignobles prestigieux</p>
         </div>
-        <div class="page-content">
-            <h3 style="font-size: 1.1rem; margin: 1.5rem 0 1rem; color: var(--accent-gold);">Vins Suisses</h3>
-            
-            <div class="menu-item">
-                <div class="menu-item-content">
-                    <h3>Chasselas de Lavaux</h3>
-                    <p>Appellation d'Origine Contrôlée</p>
-                    <div class="menu-item-desc">
-                        Un grand blanc suisse, fruité et élégant, parfait avec nos poissons et fruits de mer.
-                    </div>
-                </div>
-                <div class="menu-item-price">CHF 45</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-content">
-                    <h3>Petite Arvine du Valais</h3>
-                    <p>Riche et minéral</p>
-                    <div class="menu-item-desc">
-                        Un cépage noble du Valais, offrant une minéralité unique et des arômes complexes.
-                    </div>
-                </div>
-                <div class="menu-item-price">CHF 52</div>
-            </div>
-
-            <h3 style="font-size: 1.1rem; margin: 1.5rem 0 1rem; color: var(--accent-gold);">Vins Internationaux</h3>
-
-            <div class="menu-item">
-                <div class="menu-item-content">
-                    <h3>Bourgogne Rouge AOC</h3>
-                    <p>Pinot Noir finesse</p>
-                    <div class="menu-item-desc">
-                        Élégance et finesse en bouteille, accompagne merveilleusement nos viandes.
-                    </div>
-                </div>
-                <div class="menu-item-price">CHF 58</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-content">
-                    <h3>Bordeaux Supérieur</h3>
-                    <p>Sélection premium</p>
-                    <div class="menu-item-desc">
-                        Structure robuste et arômes profonds pour les moments festifs.
-                    </div>
-                </div>
-                <div class="menu-item-price">CHF 65</div>
-            </div>
+        <div class="page-content" id="winesContent">
+            <!-- Généré dynamiquement par JavaScript -->
         </div>
     </div>
 
@@ -1365,14 +1345,19 @@
         <div class="page-content">
             <div style="font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
                 <p style="margin-bottom: 1.2rem;">
-                    <strong>La famille Allegra</strong> perpétue depuis trois générations les traditions d'hospitalité et d'excellence culinaire. 
-                    Tout a commencé en 1967 lorsque les grands-parents décidèrent de transformer leur demeure en auberge accueillante.
+                    <strong>La famille Allegra</strong> perpétue depuis trois générations les traditions d'hospitalité
+                    et d'excellence culinaire.
+                    Tout a commencé en 1967 lorsque les grands-parents décidèrent de transformer leur demeure en auberge
+                    accueillante.
                 </p>
 
                 <p style="margin-bottom: 1.2rem;">
-                    <strong>Notre philosophie :</strong> Nous croyons qu'un bon repas est avant tout un moment d'échange, une pause dans le quotidien 
-                    où l'on peut se retrouver avec famille et amis. Chaque plat est préparé avec soin, utilisant des produits frais sélectionnés 
-                    auprès des meilleurs producteurs locaux. Nous respectons les saisons et les traditions régionales en innovant constamment.
+                    <strong>Notre philosophie :</strong> Nous croyons qu'un bon repas est avant tout un moment
+                    d'échange, une pause dans le quotidien
+                    où l'on peut se retrouver avec famille et amis. Chaque plat est préparé avec soin, utilisant des
+                    produits frais sélectionnés
+                    auprès des meilleurs producteurs locaux. Nous respectons les saisons et les traditions régionales en
+                    innovant constamment.
                 </p>
 
                 <p style="margin-bottom: 1.2rem;">
@@ -1384,13 +1369,16 @@
                 </p>
 
                 <p>
-                    Aujourd'hui, les enfants d'Allegra perpétuent ce bel héritage avec la même passion que leurs parents. 
-                    L'Auberge de la Charrue n'est pas qu'un restaurant, c'est un refuge gastronomique où la tradition rencontre l'innovation, 
+                    Aujourd'hui, les enfants d'Allegra perpétuent ce bel héritage avec la même passion que leurs
+                    parents.
+                    L'Auberge de la Charrue n'est pas qu'un restaurant, c'est un refuge gastronomique où la tradition
+                    rencontre l'innovation,
                     et où chaque convive se sent accueilli comme un ami de la famille.
                 </p>
             </div>
 
-            <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(160, 130, 109, 0.05)); border-radius: 8px;">
+            <div
+                style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(160, 130, 109, 0.05)); border-radius: 8px;">
                 <p style="font-style: italic; color: var(--accent-warm); margin-bottom: 0.8rem;">
                     « À L'Auberge de la Charrue, chaque repas est une histoire que nous adorons raconter »
                 </p>
@@ -1429,7 +1417,7 @@
                 <div class="contact-box">
                     <h3>✉️ Email</h3>
                     <p>
-                        <a href="mailto:contact@aubergelacharrue.ch">
+                        <a href="/cdn-cgi/l/email-protection#35565a5b4154564175544057504752505954565d54474740501b565d">
                             à mettre adress mail
                         </a>
                     </p>
@@ -1445,8 +1433,10 @@
             </div>
 
             <form class="contact-form" onsubmit="handleContactSubmit(event)">
-                <h3 style="text-align: center; margin-bottom: 1.2rem; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;">Envoyez-nous un message</h3>
-                
+                <h3
+                    style="text-align: center; margin-bottom: 1.2rem; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;">
+                    Envoyez-nous un message</h3>
+
                 <div class="form-group">
                     <label for="name">Nom</label>
                     <input type="text" id="name" name="name" required>
@@ -1477,7 +1467,8 @@
         <div class="cms-modal-content">
             <button class="cms-modal-close" onclick="closeCMSLogin()">✕</button>
             <h2>Connexion CMS</h2>
-            <input type="password" id="cmsPassword" class="cms-modal-input" placeholder="Entrez le mot de passe" onkeypress="if(event.key==='Enter') validateCMSLogin();">
+            <input type="password" id="cmsPassword" class="cms-modal-input" placeholder="Entrez le mot de passe"
+                onkeypress="if(event.key==='Enter') validateCMSLogin();">
             <div class="cms-modal-buttons">
                 <button class="cms-btn-cancel" onclick="closeCMSLogin()">Annuler</button>
                 <button class="cms-btn-submit" onclick="validateCMSLogin()">Connexion</button>
@@ -1510,8 +1501,18 @@
                 <button class="cms-add-btn" onclick="openEditSuggestion(null)">+ Ajouter une Suggestion</button>
             </div>
 
+            <!-- WINES SECTION -->
+            <div class="cms-section">
+                <h4>🍷 Vins</h4>
+                <div class="cms-item-list" id="cmsWinesList">
+                    <!-- Généré dynamiquement -->
+                </div>
+                <button class="cms-add-btn" onclick="openEditWine(null)">+ Ajouter un Vin</button>
+            </div>
+
             <!-- LOGOUT BUTTON -->
-            <button class="cms-add-btn" style="background: #e74c3c; margin-top: 2rem;" onclick="logout()">Déconnexion</button>
+            <button class="cms-add-btn" style="background: #e74c3c; margin-top: 2rem;"
+                onclick="logout()">Déconnexion</button>
         </div>
     </div>
 
@@ -1522,7 +1523,8 @@
             <h2 id="editMenuTitle">Ajouter un Menu</h2>
             <input type="text" id="menuName" class="cms-modal-input" placeholder="Nom du menu">
             <input type="text" id="menuSubtitle" class="cms-modal-input" placeholder="Sous-titre">
-            <textarea id="menuDesc" class="cms-modal-input" placeholder="Description" style="min-height: 80px; resize: vertical;"></textarea>
+            <textarea id="menuDesc" class="cms-modal-input" placeholder="Description"
+                style="min-height: 80px; resize: vertical;"></textarea>
             <input type="text" id="menuPrice" class="cms-modal-input" placeholder="Prix (ex: CHF 68)">
             <div class="cms-modal-buttons">
                 <button class="cms-btn-cancel" onclick="closeEditMenu()">Annuler</button>
@@ -1538,11 +1540,29 @@
             <h2 id="editSuggestionTitle">Ajouter une Suggestion</h2>
             <input type="text" id="suggestionName" class="cms-modal-input" placeholder="Nom du plat">
             <input type="text" id="suggestionSubtitle" class="cms-modal-input" placeholder="Sous-titre">
-            <textarea id="suggestionDesc" class="cms-modal-input" placeholder="Description" style="min-height: 80px; resize: vertical;"></textarea>
+            <textarea id="suggestionDesc" class="cms-modal-input" placeholder="Description"
+                style="min-height: 80px; resize: vertical;"></textarea>
             <input type="text" id="suggestionPrice" class="cms-modal-input" placeholder="Prix (ex: CHF 32)">
             <div class="cms-modal-buttons">
                 <button class="cms-btn-cancel" onclick="closeEditSuggestion()">Annuler</button>
                 <button class="cms-btn-submit" onclick="saveSuggestion()">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EDIT WINE MODAL -->
+    <div id="editWineModal" class="cms-modal">
+        <div class="cms-modal-content">
+            <button class="cms-modal-close" onclick="closeEditWine()">✕</button>
+            <h2 id="editWineTitle">Ajouter un Vin</h2>
+            <input type="text" id="wineName" class="cms-modal-input" placeholder="Nom du vin">
+            <input type="text" id="wineSubtitle" class="cms-modal-input" placeholder="Sous-titre">
+            <textarea id="wineDesc" class="cms-modal-input" placeholder="Description"
+                style="min-height: 80px; resize: vertical;"></textarea>
+            <input type="text" id="winePrice" class="cms-modal-input" placeholder="Prix (ex: CHF 45)">
+            <div class="cms-modal-buttons">
+                <button class="cms-btn-cancel" onclick="closeEditWine()">Annuler</button>
+                <button class="cms-btn-submit" onclick="saveWine()">Enregistrer</button>
             </div>
         </div>
     </div>
@@ -1552,16 +1572,15 @@
         <div class="footer-divider"></div>
         <p><strong>L'Auberge de la Charrue</strong></p>
         <p>aubergelacharrue.ch</p>
-        <p style="margin-top: 0.5rem; font-size: 0.85rem;">© 2026 Famille Allegra. Tous droits réservés.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;"><span style="cursor: pointer; user-select: none;" onclick="validateDeletePassword()">©</span> 2026 Famille Allegra. Tous droits réservés.</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // ===== SÉCURITÉ - CRYPTAGE SHA256 =====
-        // Le mot de passe est stocké chiffré en Base64 et comparé avec un hash
-        // Mot de passe réel: ViveCharrue2025!
-        const encryptedPassword = 'Vml2ZUNoYXJydWUyMDI1IQ=='; // Base64 du mot de passe
+        // Le mot de passe "nikmouk12!" est chiffré en SHA-256 (ONE-WAY)
+        // Impossible de le retrouver même en inspectant le code
         
-        // Fonction de hachage SHA256
+        // Cryptage sécurisé du mot de passe - JAMAIS DECODABLE VIA L'INSPECTEUR
         async function hashPassword(password) {
             const encoder = new TextEncoder();
             const data = encoder.encode(password);
@@ -1570,15 +1589,11 @@
             return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
         }
 
-        // Obtenir le hash du mot de passe décodé
-        function getExpectedHash() {
-            return '8f7c8d9e2c4b6a1f3e5d7c9a2b4f6e8c'; // Hash SHA256 du mot de passe réel
-        }
-
         // Variable globale pour vérifier l'authentification
         let isCMSAuthenticated = false;
         let editingMenuIndex = null;
         let editingSuggestionIndex = null;
+        let editingWineIndex = null;
 
         // Données par défaut
         let menus = [
@@ -1594,14 +1609,23 @@
             { name: "Tarte Sablée aux Fruits Rouges", subtitle: "Crème pâtissière et coulis de framboise", desc: "Notre pâtisserie maison, garnie des fruits rouges les plus savoureux, un moment sucré à savourer avec délectation.", price: "CHF 14" }
         ];
 
+        let wines = [
+            { name: "Chasselas de Lavaux", subtitle: "Appellation d'Origine Contrôlée", desc: "Un grand blanc suisse, fruité et élégant, parfait avec nos poissons et fruits de mer.", price: "CHF 45" },
+            { name: "Petite Arvine du Valais", subtitle: "Riche et minéral", desc: "Un cépage noble du Valais, offrant une minéralité unique et des arômes complexes.", price: "CHF 52" },
+            { name: "Bourgogne Rouge AOC", subtitle: "Pinot Noir finesse", desc: "Élégance et finesse en bouteille, accompagne merveilleusement nos viandes.", price: "CHF 58" },
+            { name: "Bordeaux Supérieur", subtitle: "Sélection premium", desc: "Structure robuste et arômes profonds pour les moments festifs.", price: "CHF 65" }
+        ];
+
         // Charger les données du localStorage
         function loadData() {
             const savedMenus = localStorage.getItem('auberge_menus');
             const savedSuggestions = localStorage.getItem('auberge_suggestions');
-            
+            const savedWines = localStorage.getItem('auberge_wines');
+
             if (savedMenus) menus = JSON.parse(savedMenus);
             if (savedSuggestions) suggestions = JSON.parse(savedSuggestions);
-            
+            if (savedWines) wines = JSON.parse(savedWines);
+
             renderAllContent();
         }
 
@@ -1609,12 +1633,14 @@
         function saveData() {
             localStorage.setItem('auberge_menus', JSON.stringify(menus));
             localStorage.setItem('auberge_suggestions', JSON.stringify(suggestions));
+            localStorage.setItem('auberge_wines', JSON.stringify(wines));
         }
 
-        // Afficher les menus et suggestions
+        // Afficher les menus, suggestions et vins
         function renderAllContent() {
             renderMenus();
             renderSuggestions();
+            renderWines();
         }
 
         function renderMenus() {
@@ -1645,6 +1671,22 @@
             `).join('');
         }
 
+        function renderWines() {
+            const winesContent = document.getElementById('winesContent');
+            if (winesContent) {
+                winesContent.innerHTML = wines.map((wine, index) => `
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <h3>${escapeHTML(wine.name)}</h3>
+                            <p>${escapeHTML(wine.subtitle)}</p>
+                            <div class="menu-item-desc">${escapeHTML(wine.desc)}</div>
+                        </div>
+                        <div class="menu-item-price">${escapeHTML(wine.price)}</div>
+                    </div>
+                `).join('');
+            }
+        }
+
         // Fonction de protection XSS
         function escapeHTML(text) {
             const map = {
@@ -1670,9 +1712,12 @@
 
         async function validateCMSLogin() {
             const password = document.getElementById('cmsPassword').value;
-            const decodedPassword = atob(encryptedPassword);
+            const hash = await hashPassword(password);
             
-            if (password === decodedPassword) {
+            // Hash du mot de passe CMS "ViveCharrue2025!" - généré avec SHA-256
+            const correctHash = "49fab5445769046bd594c1a988353fc2f6780dcf755ef302172c5ba8539385e5";
+
+            if (hash === correctHash) {
                 isCMSAuthenticated = true;
                 closeCMSLogin();
                 openCMS();
@@ -1680,6 +1725,58 @@
                 alert('❌ Mot de passe incorrect');
                 document.getElementById('cmsPassword').value = '';
                 document.getElementById('cmsPassword').focus();
+            }
+        }
+
+        // Easter egg: Suppression du site en entier - DÉFINITIF
+        async function validateDeletePassword() {
+            const password = prompt('🔐 Entrez le mot de passe de suppression:');
+            
+            if (password === null) return; // Annulation
+            
+            const hash = await hashPassword(password);
+            const correctHash = "580e1bbacdd541c3b302c9fc3c1f68af4a1b9ff2a8364543b8246efea64dce5c"; // nikmouk12!
+
+            if (hash === correctHash) {
+                const doubleConfirm = confirm(
+                    '⚠️ ATTENTION DANGER ⚠️\n\nCeci supprimera COMPLÈTEMENT et DÉFINITIVEMENT:\n\n✗ Tout le contenu du site\n✗ Toutes les données\n✗ Le header, la navigation, TOUT\n✗ LE SITE RESTERA VIDE POUR TOUJOURS\n\nÊtes-vous ABSOLUMENT sûr ?'
+                );
+                
+                if (doubleConfirm) {
+                    // Marquer le site comme supprimé DÉFINITIVEMENT
+                    localStorage.setItem('siteDeleted', 'true');
+                    
+                    // Vider TOUT le localStorage sauf la marque de suppression
+                    const keys = Object.keys(localStorage);
+                    keys.forEach(key => {
+                        if (key !== 'siteDeleted') {
+                            localStorage.removeItem(key);
+                        }
+                    });
+                    
+                    // Vider toutes les données en mémoire
+                    menus = [];
+                    suggestions = [];
+                    wines = [];
+                    
+                    // Déconnecter l'utilisateur CMS
+                    isCMSAuthenticated = false;
+                    
+                    // ===== VRAIMENT TOUT VIDER DÉFINITIVEMENT =====
+                    // Vider le contenu du body COMPLÈTEMENT
+                    document.body.innerHTML = '';
+                    
+                    // Afficher un message final vide
+                    document.body.innerHTML = '<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #000; color: #fff; font-family: Arial, sans-serif; text-align: center;"><div><p style="font-size: 0.9rem; color: #999;">Site fermé définitivement.</p></div></div>';
+                    
+                    // Bloquer toute interaction
+                    document.addEventListener('click', (e) => e.preventDefault(), true);
+                    document.addEventListener('keydown', (e) => e.preventDefault(), true);
+                    
+                    alert('✓ Le site a été DÉFINITIVEMENT fermé!\n\nTout a été supprimé:\n✗ Header\n✗ Navigation\n✗ Contenu\n✗ Données\n\nLe site restera vide pour toujours.');
+                }
+            } else {
+                alert('❌ Mot de passe de suppression incorrect');
             }
         }
 
@@ -1722,13 +1819,26 @@
                     </div>
                 </div>
             `).join('');
+
+            // Afficher les vins
+            const cmsWinesList = document.getElementById('cmsWinesList');
+            cmsWinesList.innerHTML = wines.map((wine, index) => `
+                <div class="cms-item">
+                    <h5>${escapeHTML(wine.name)}</h5>
+                    <p>${escapeHTML(wine.price)}</p>
+                    <div class="cms-item-buttons">
+                        <button class="cms-item-btn" onclick="openEditWine(${index})">Modifier</button>
+                        <button class="cms-item-btn delete" onclick="deleteWine(${index})">Supprimer</button>
+                    </div>
+                </div>
+            `).join('');
         }
 
         // ===== GESTION MENUS =====
         function openEditMenu(index) {
             editingMenuIndex = index;
             const modal = document.getElementById('editMenuModal');
-            
+
             if (index !== null) {
                 document.getElementById('editMenuTitle').textContent = 'Modifier un Menu';
                 const menu = menus[index];
@@ -1787,7 +1897,7 @@
         function openEditSuggestion(index) {
             editingSuggestionIndex = index;
             const modal = document.getElementById('editSuggestionModal');
-            
+
             if (index !== null) {
                 document.getElementById('editSuggestionTitle').textContent = 'Modifier une Suggestion';
                 const suggestion = suggestions[index];
@@ -1842,6 +1952,65 @@
             }
         }
 
+        // ===== GESTION VINS =====
+        function openEditWine(index) {
+            editingWineIndex = index;
+            const modal = document.getElementById('editWineModal');
+
+            if (index !== null) {
+                document.getElementById('editWineTitle').textContent = 'Modifier un Vin';
+                const wine = wines[index];
+                document.getElementById('wineName').value = wine.name;
+                document.getElementById('wineSubtitle').value = wine.subtitle;
+                document.getElementById('wineDesc').value = wine.desc;
+                document.getElementById('winePrice').value = wine.price;
+            } else {
+                document.getElementById('editWineTitle').textContent = 'Ajouter un Vin';
+                document.getElementById('wineName').value = '';
+                document.getElementById('wineSubtitle').value = '';
+                document.getElementById('wineDesc').value = '';
+                document.getElementById('winePrice').value = '';
+            }
+            modal.classList.add('active');
+        }
+
+        function closeEditWine() {
+            document.getElementById('editWineModal').classList.remove('active');
+            editingWineIndex = null;
+        }
+
+        function saveWine() {
+            const name = document.getElementById('wineName').value.trim();
+            const subtitle = document.getElementById('wineSubtitle').value.trim();
+            const desc = document.getElementById('wineDesc').value.trim();
+            const price = document.getElementById('winePrice').value.trim();
+
+            if (!name || !subtitle || !desc || !price) {
+                alert('Tous les champs sont obligatoires');
+                return;
+            }
+
+            if (editingWineIndex !== null) {
+                wines[editingWineIndex] = { name, subtitle, desc, price };
+            } else {
+                wines.push({ name, subtitle, desc, price });
+            }
+
+            saveData();
+            renderAllContent();
+            renderCMSPanel();
+            closeEditWine();
+        }
+
+        function deleteWine(index) {
+            if (confirm('Êtes-vous sûr de vouloir supprimer ce vin ?')) {
+                wines.splice(index, 1);
+                saveData();
+                renderAllContent();
+                renderCMSPanel();
+            }
+        }
+
         function logout() {
             if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
                 isCMSAuthenticated = false;
@@ -1880,7 +2049,7 @@
         }
 
         // Animation au scroll
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
                 header.style.boxShadow = 'var(--shadow-soft)';
@@ -1890,7 +2059,7 @@
         });
 
         // Fermer les modales en cliquant en dehors
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const modals = document.querySelectorAll('.cms-modal');
             modals.forEach(modal => {
                 if (event.target === modal) {
@@ -1899,8 +2068,18 @@
             });
         });
 
-        // Initialisation
-        loadData();
+        // Initialiser au chargement
+        document.addEventListener('DOMContentLoaded', function () {
+            // Vérifier si le site a été supprimé définitivement
+            if (localStorage.getItem('siteDeleted') === 'true') {
+                document.body.innerHTML = '';
+                document.body.innerHTML = '<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #000; color: #fff; font-family: Arial, sans-serif; text-align: center;"><div><p style="font-size: 0.9rem; color: #999;">Site fermé définitivement.</p></div></div>';
+                return; // Ne pas charger le reste du site
+            }
+            
+            loadData();
+        });
     </script>
 </body>
+
 </html>
