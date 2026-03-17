@@ -46,7 +46,7 @@
             background: rgba(245, 241, 237, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-subtle);
-            padding: 1.2rem 0;
+            padding: 1rem 0;
             animation: slideDown 0.6s ease-out;
         }
 
@@ -64,7 +64,7 @@
         nav {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -72,7 +72,7 @@
 
         .logo {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary-dark);
             letter-spacing: 2px;
@@ -84,24 +84,24 @@
         }
 
         .logo span {
-            font-size: 0.7rem;
-            letter-spacing: 3px;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
             color: var(--accent-gold);
             font-weight: 400;
-            margin-top: 0.3rem;
+            margin-top: 0.2rem;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 3rem;
+            gap: 2rem;
             align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             letter-spacing: 1px;
             position: relative;
             transition: color 0.3s ease;
@@ -127,9 +127,38 @@
             width: 100%;
         }
 
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
         /* ===== HERO SECTION ===== */
         .hero {
-            margin-top: 70px;
+            margin-top: 65px;
             min-height: 90vh;
             display: flex;
             align-items: center;
@@ -137,7 +166,7 @@
             background: linear-gradient(135deg, var(--primary-light) 0%, #ede9e4 50%, var(--primary-light) 100%);
             position: relative;
             overflow: hidden;
-            padding: 2rem;
+            padding: 2rem 1rem;
         }
 
         .hero::before {
@@ -189,28 +218,28 @@
 
         .hero h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 4.5rem;
+            font-size: 3.5rem;
             font-weight: 700;
             color: var(--primary-dark);
             line-height: 1.1;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             letter-spacing: -1px;
         }
 
         .hero-tagline {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             color: var(--accent-warm);
             font-style: italic;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-weight: 400;
             letter-spacing: 0.5px;
         }
 
         .hero-description {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-dark);
             max-width: 600px;
-            margin: 0 auto 3rem;
+            margin: 0 auto 2rem;
             line-height: 1.8;
             opacity: 0.9;
         }
@@ -219,8 +248,8 @@
         .suggestions-preview {
             background: var(--primary-dark);
             color: var(--text-light);
-            padding: 5rem 2rem;
-            margin: 4rem 0;
+            padding: 4rem 1rem;
+            margin: 3rem 0;
             position: relative;
             overflow: hidden;
         }
@@ -247,22 +276,22 @@
 
         .suggestions-content h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             font-weight: 600;
         }
 
         .suggestions-content p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             max-width: 500px;
-            margin: 0 auto 2.5rem;
+            margin: 0 auto 2rem;
             line-height: 1.8;
             opacity: 0.95;
         }
 
         /* ===== FAMILY SECTION ===== */
         .family-section {
-            padding: 6rem 2rem;
+            padding: 4rem 1rem;
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
@@ -270,14 +299,14 @@
 
         .family-section h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
             color: var(--primary-dark);
         }
 
         .family-content {
             background: linear-gradient(135deg, rgba(184, 134, 11, 0.08) 0%, rgba(160, 130, 109, 0.05) 100%);
-            padding: 3rem;
+            padding: 2rem;
             border-radius: 8px;
             border: 1px solid var(--border-subtle);
             max-width: 700px;
@@ -285,23 +314,23 @@
         }
 
         .family-content p {
-            font-size: 1.1rem;
-            line-height: 1.9;
+            font-size: 1rem;
+            line-height: 1.8;
             color: var(--text-dark);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             text-align: left;
         }
 
         /* ===== BUTTONS ===== */
         .btn {
             display: inline-block;
-            padding: 0.9rem 2.5rem;
+            padding: 0.8rem 2rem;
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm));
             color: white;
             text-decoration: none;
             border: none;
             cursor: pointer;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             letter-spacing: 1px;
             font-weight: 500;
             border-radius: 4px;
@@ -347,8 +376,8 @@
         .page {
             display: none;
             animation: fadeIn 0.6s ease-in;
-            min-height: calc(100vh - 70px);
-            margin-top: 70px;
+            min-height: calc(100vh - 65px);
+            margin-top: 65px;
         }
 
         .page.active {
@@ -368,89 +397,101 @@
         .page-header {
             background: linear-gradient(135deg, var(--primary-dark) 0%, #2d2520 100%);
             color: var(--text-light);
-            padding: 4rem 2rem;
+            padding: 3rem 1.5rem;
             text-align: center;
         }
 
         .page-header h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
             letter-spacing: 1px;
+        }
+
+        .page-header p {
+            font-size: 1rem;
         }
 
         .page-content {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 2rem 1rem;
         }
 
         .menu-item {
-            padding: 2rem;
-            margin: 1.5rem 0;
+            padding: 1.5rem 0;
+            margin: 1rem 0;
             border-bottom: 1px solid var(--border-subtle);
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 2rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .menu-item:last-child {
             border-bottom: none;
         }
 
+        .menu-item-content {
+            flex: 1;
+            min-width: 250px;
+        }
+
         .menu-item-content h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
             color: var(--text-dark);
         }
 
         .menu-item-content p {
             color: var(--accent-warm);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             margin-bottom: 0.5rem;
         }
 
         .menu-item-desc {
             color: #666;
-            font-size: 0.9rem;
-            line-height: 1.6;
+            font-size: 0.85rem;
+            line-height: 1.5;
         }
 
         .menu-item-price {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--accent-gold);
             font-weight: 600;
             white-space: nowrap;
+            margin-top: 0.5rem;
         }
 
         /* ===== CONTACT FORM ===== */
         .contact-form {
             max-width: 600px;
-            margin: 3rem auto;
+            margin: 2rem auto;
             background: linear-gradient(135deg, rgba(184, 134, 11, 0.05), rgba(160, 130, 109, 0.03));
-            padding: 2.5rem;
+            padding: 2rem 1.5rem;
             border: 1px solid var(--border-subtle);
             border-radius: 8px;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             font-weight: 500;
             color: var(--text-dark);
+            font-size: 0.95rem;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 0.9rem;
+            padding: 0.8rem;
             border: 1px solid var(--border-subtle);
             border-radius: 4px;
             font-family: 'Lora', serif;
@@ -469,68 +510,400 @@
 
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 100px;
+        }
+
+        /* ===== CONTACT GRID ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-box {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.05), rgba(160, 130, 109, 0.03));
+            border-radius: 8px;
+        }
+
+        .contact-box h3 {
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            color: var(--accent-gold);
+        }
+
+        .contact-box p {
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .contact-box a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
         }
 
         /* ===== FOOTER ===== */
         footer {
             background: var(--primary-dark);
             color: var(--text-light);
-            padding: 3rem 2rem;
+            padding: 2rem 1rem;
             text-align: center;
-            margin-top: 4rem;
+            margin-top: 3rem;
             border-top: 1px solid rgba(184, 134, 11, 0.2);
         }
 
         footer p {
             opacity: 0.8;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
         }
 
         .footer-divider {
             width: 60px;
             height: 2px;
             background: linear-gradient(to right, var(--accent-gold), var(--accent-warm));
-            margin: 1.5rem auto;
+            margin: 1rem auto;
         }
 
         /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            .page-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .suggestions-content h2 {
+                font-size: 2rem;
+            }
+
+            .family-section h2 {
+                font-size: 2rem;
+            }
+        }
+
         @media (max-width: 768px) {
+            header {
+                padding: 0.8rem 0;
+            }
+
+            nav {
+                padding: 0 0.8rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .logo span {
+                font-size: 0.5rem;
+            }
+
             .nav-links {
-                gap: 1.5rem;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: rgba(245, 241, 237, 0.98);
+                backdrop-filter: blur(10px);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                list-style: none;
+                padding: 0;
+                border-bottom: 1px solid var(--border-subtle);
+            }
+
+            .nav-links.active {
+                max-height: 400px;
+                overflow-y: auto;
+                padding: 1rem 0;
+            }
+
+            .nav-links li {
+                border-bottom: 1px solid var(--border-subtle);
+            }
+
+            .nav-links li:last-child {
+                border-bottom: none;
             }
 
             .nav-links a {
-                font-size: 0.85rem;
+                display: block;
+                padding: 1rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero {
+                margin-top: 65px;
+                min-height: 70vh;
+                padding: 2rem 1rem;
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
 
             .hero-tagline {
                 font-size: 1rem;
             }
 
+            .hero-description {
+                font-size: 0.95rem;
+            }
+
             .page-header h1 {
                 font-size: 2rem;
             }
 
-            .family-section h2,
-            .suggestions-content h2 {
-                font-size: 2rem;
+            .page-header p {
+                font-size: 0.9rem;
+            }
+
+            .page-content {
+                padding: 1.5rem 1rem;
+            }
+
+            .family-section {
+                padding: 3rem 1rem;
+            }
+
+            .family-section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .family-content {
+                padding: 1.5rem;
+            }
+
+            .family-content p {
+                font-size: 0.95rem;
+                margin-bottom: 1rem;
             }
 
             .menu-item {
                 flex-direction: column;
+                padding: 1rem 0;
+            }
+
+            .menu-item-content h3 {
+                font-size: 1.1rem;
             }
 
             .menu-item-price {
-                order: -1;
+                font-size: 1rem;
+                margin-top: 0.5rem;
             }
 
-            .nav-links {
-                flex-wrap: wrap;
+            .suggestions-preview {
+                padding: 3rem 1rem;
+            }
+
+            .suggestions-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .suggestions-content p {
+                font-size: 0.9rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .contact-box {
+                padding: 1.2rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+                margin: 1.5rem auto;
+            }
+
+            .contact-form h3 {
+                font-size: 1.3rem;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 0.7rem;
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 0.6rem 0;
+            }
+
+            nav {
+                padding: 0 0.5rem;
+            }
+
+            .logo {
+                font-size: 1rem;
+            }
+
+            .logo span {
+                font-size: 0.45rem;
+            }
+
+            .nav-links.active {
+                max-height: 300px;
+            }
+
+            .nav-links a {
+                padding: 0.8rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                margin-top: 60px;
+                min-height: 60vh;
+                padding: 1.5rem 0.8rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .hero-tagline {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-description {
+                font-size: 0.85rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 1.6rem;
+                padding: 2rem 1rem;
+            }
+
+            .page-header {
+                padding: 2rem 1rem;
+            }
+
+            .page-content {
+                padding: 1rem 0.8rem;
+            }
+
+            .family-section {
+                padding: 2rem 0.8rem;
+            }
+
+            .family-section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .family-content {
+                padding: 1rem;
+            }
+
+            .family-content p {
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            .menu-item-content h3 {
+                font-size: 1rem;
+            }
+
+            .menu-item-content p {
+                font-size: 0.8rem;
+            }
+
+            .menu-item-desc {
+                font-size: 0.8rem;
+            }
+
+            .menu-item-price {
+                font-size: 0.95rem;
+            }
+
+            .suggestions-preview {
+                padding: 2rem 0.8rem;
+                margin: 2rem 0;
+            }
+
+            .suggestions-content h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .suggestions-content p {
+                font-size: 0.85rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-box {
+                padding: 1rem;
+            }
+
+            .contact-box h3 {
+                font-size: 0.9rem;
+            }
+
+            .contact-box p {
+                font-size: 0.85rem;
+            }
+
+            .contact-form {
+                padding: 1.2rem;
+                margin: 1rem auto;
+            }
+
+            .contact-form h3 {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            .form-group label {
+                font-size: 0.9rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+
+            .btn:hover {
+                transform: translateY(-2px);
+            }
+
+            footer {
+                padding: 1.5rem 0.8rem;
+            }
+
+            footer p {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -542,7 +915,12 @@
             <a href="#" class="logo" onclick="showPage('home'); return false;">
                 L'AUBERGE<br><span>DE LA CHARRUE</span>
             </a>
-            <ul class="nav-links">
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#" onclick="showPage('home'); return false;">Accueil</a></li>
                 <li><a href="#" onclick="showPage('menus'); return false;">Menus</a></li>
                 <li><a href="#" onclick="showPage('suggestions'); return false;">Suggestions</a></li>
@@ -697,7 +1075,7 @@
             <p>Sélection minutieuse de vignobles prestigieux</p>
         </div>
         <div class="page-content">
-            <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--accent-gold);">Vins Suisses</h3>
+            <h3 style="font-size: 1.1rem; margin: 1.5rem 0 1rem; color: var(--accent-gold);">Vins Suisses</h3>
             
             <div class="menu-item">
                 <div class="menu-item-content">
@@ -721,7 +1099,7 @@
                 <div class="menu-item-price">CHF 52</div>
             </div>
 
-            <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--accent-gold);">Vins Internationaux</h3>
+            <h3 style="font-size: 1.1rem; margin: 1.5rem 0 1rem; color: var(--accent-gold);">Vins Internationaux</h3>
 
             <div class="menu-item">
                 <div class="menu-item-content">
@@ -754,19 +1132,19 @@
             <p>L'Histoire de la Famille Allegra</p>
         </div>
         <div class="page-content">
-            <div style="font-size: 1.1rem; line-height: 1.9; color: var(--text-dark);">
-                <p style="margin-bottom: 1.5rem;">
+            <div style="font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                <p style="margin-bottom: 1.2rem;">
                     <strong>La famille Allegra</strong> perpétue depuis trois générations les traditions d'hospitalité et d'excellence culinaire. 
                     Tout a commencé en 1967 lorsque les grands-parents décidèrent de transformer leur demeure en auberge accueillante.
                 </p>
 
-                <p style="margin-bottom: 1.5rem;">
+                <p style="margin-bottom: 1.2rem;">
                     <strong>Notre philosophie :</strong> Nous croyons qu'un bon repas est avant tout un moment d'échange, une pause dans le quotidien 
                     où l'on peut se retrouver avec famille et amis. Chaque plat est préparé avec soin, utilisant des produits frais sélectionnés 
                     auprès des meilleurs producteurs locaux. Nous respectons les saisons et les traditions régionales en innovant constamment.
                 </p>
 
-                <p style="margin-bottom: 1.5rem;">
+                <p style="margin-bottom: 1.2rem;">
                     <strong>Nos valeurs :</strong>
                     <br>• <strong>L'authenticité</strong> - Nos recettes honores les traditions culinaires suisses
                     <br>• <strong>La qualité</strong> - Nous sélectionnons uniquement les meilleurs ingrédients
@@ -781,8 +1159,8 @@
                 </p>
             </div>
 
-            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(160, 130, 109, 0.05)); border-radius: 8px;">
-                <p style="font-style: italic; color: var(--accent-warm); margin-bottom: 1rem;">
+            <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(160, 130, 109, 0.05)); border-radius: 8px;">
+                <p style="font-style: italic; color: var(--accent-warm); margin-bottom: 0.8rem;">
                     « À L'Auberge de la Charrue, chaque repas est une histoire que nous adorons raconter »
                 </p>
                 <p style="font-weight: 500;">— La Famille Allegra</p>
@@ -797,10 +1175,10 @@
             <p>Nous serions ravi de vous accueillir</p>
         </div>
         <div class="page-content">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
-                <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.05), rgba(160, 130, 109, 0.03)); border-radius: 8px;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent-gold);">📍 Adresse</h3>
-                    <p style="line-height: 1.8;">
+            <div class="contact-grid">
+                <div class="contact-box">
+                    <h3>📍 Adresse</h3>
+                    <p>
                         L'Auberge de la Charrue<br>
                         [Rue à compléter]<br>
                         [Code Postal, Ville]<br>
@@ -808,29 +1186,27 @@
                     </p>
                 </div>
 
-                <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.05), rgba(160, 130, 109, 0.03)); border-radius: 8px;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent-gold);">📞 Téléphone</h3>
-                    <p style="line-height: 1.8;">
+                <div class="contact-box">
+                    <h3>📞 Téléphone</h3>
+                    <p>
                         <strong>+41 [numéro]</strong><br>
                         Ouvert du lundi au dimanche<br>
                         Réservations conseillées
                     </p>
                 </div>
-            </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
-                <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.05), rgba(160, 130, 109, 0.03)); border-radius: 8px;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent-gold);">✉️ Email</h3>
-                    <p style="line-height: 1.8;">
-                        <a href="mailto:contact@aubergelacharrue.ch" style="color: var(--accent-gold); text-decoration: none; font-weight: 500;">
+                <div class="contact-box">
+                    <h3>✉️ Email</h3>
+                    <p>
+                        <a href="mailto:contact@aubergelacharrue.ch">
                             à mettre adress mail
                         </a>
                     </p>
                 </div>
 
-                <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.05), rgba(160, 130, 109, 0.03)); border-radius: 8px;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent-gold);">🕐 Horaires</h3>
-                    <p style="line-height: 1.8;">
+                <div class="contact-box">
+                    <h3>🕐 Horaires</h3>
+                    <p>
                         Lun - Dim: 11h30 - 22h00<br>
                         Fermé le [jour à compléter]
                     </p>
@@ -838,7 +1214,7 @@
             </div>
 
             <form class="contact-form" onsubmit="handleContactSubmit(event)">
-                <h3 style="text-align: center; margin-bottom: 1.5rem; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;">Envoyez-nous un message</h3>
+                <h3 style="text-align: center; margin-bottom: 1.2rem; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;">Envoyez-nous un message</h3>
                 
                 <div class="form-group">
                     <label for="name">Nom</label>
@@ -870,7 +1246,7 @@
         <div class="footer-divider"></div>
         <p><strong>L'Auberge de la Charrue</strong></p>
         <p>aubergelacharrue.ch</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">© 2026 Famille Allegra. Tous droits réservés.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">© 2026 Famille Allegra. Tous droits réservés.</p>
     </footer>
 
     <script>
@@ -885,6 +1261,19 @@
                 targetPage.classList.add('active');
                 window.scrollTo(0, 0);
             }
+
+            // Fermer le menu mobile
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.menu-toggle');
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+        }
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.menu-toggle');
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
         }
 
         function handleContactSubmit(event) {
@@ -901,6 +1290,16 @@
             } else {
                 header.style.boxShadow = 'none';
             }
+        });
+
+        // Fermer le menu au clic sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navLinks = document.getElementById('navLinks');
+                const menuToggle = document.querySelector('.menu-toggle');
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
         });
     </script>
 </body>
