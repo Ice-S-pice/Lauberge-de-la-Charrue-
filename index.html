@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'auberge de la Charrue - Restaurant Authentique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #1a1410;
+            --primary-light: #f5f1ed;
+            --accent-gold: #b8860b;
+            --accent-warm: #a0826d;
+            --text-dark: #2d2520;
+            --text-light: #f5f1ed;
+            --border-subtle: #e8e3dd;
+            --shadow-soft: 0 4px 20px rgba(26, 20, 16, 0.08);
+            --shadow-medium: 0 12px 40px rgba(26, 20, 16, 0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            color: var(--text-dark);
+            background-color: var(--primary-light);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(245, 241, 237, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1.2rem 0;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: 2px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.2;
+        }
+
+        .logo span {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            font-weight: 400;
+            margin-top: 0.3rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--accent-gold), var(--accent-warm));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            margin-top: 70px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-light) 0%, #ede9e4 50%, var(--primary-light) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(184, 134, 11, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(160, 130, 109, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-tagline {
+            font-size: 1.4rem;
+            color: var(--accent-warm);
+            font-style: italic;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* ===== SUGGESTIONS SECTION ===== */
+        .suggestions-preview {
+            background: var(--primary-dark);
+            color: var(--text-light);
+            padding: 5rem 2rem;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .suggestions-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(184, 134, 11, 0.02) 2px, rgba(184, 134, 11, 0.02) 4px);
+            pointer-events: none;
+        }
+
+        .suggestions-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .suggestions-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .suggestions-content p {
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* ===== FAMILY SECTION ===== */
+        .family-section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .family-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: var(--primary-dark);
+        }
+
+        .family-content {
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.08) 0%, rgba(160, 130, 109, 0.05) 100%);
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .family-content p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2.5rem;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm));
+            color: white;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Lora', serif;
+            margin: 0.5rem;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.3);
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--primary-dark), var(--text-dark));
+        }
+
+        .btn-secondary:hover {
+            box-shadow: 0 10px 30px rgba(26, 20, 16, 0.3);
+        }
+
+        /* ===== PAGES (HIDDEN BY DEFAULT) ===== */
+        .page {
+            display: none;
+            animation: fadeIn 0.6s ease-in;
+            min-height: calc(100vh - 70px);
+            margin-top: 70px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ===== PAGE TEMPLATES ===== */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #2d2520 100%);
+            color: var(--text-light);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .page-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .menu-item {
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .menu-item-content p {
+            color: var(--accent-warm);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item-desc {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .menu-item-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-form {
+            max-width: 600px;
+            margin: 3rem auto;
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.05), rgba(160, 130, 109, 0.03));
+            padding: 2.5rem;
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            background: white;
+            color: var(--text-dark);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--primary-dark);
+            color: var(--text-light);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        footer p {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, var(--accent-gold), var(--accent-warm));
+            margin: 1.5rem auto;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .family-section h2,
+            .suggestions-content h2 {
+                font-size: 2rem;
+            }
+
+            .menu-item {
+                flex-direction: column;
+            }
+
+            .menu-item-price {
+                order: -1;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <nav>
+            <a href="#" class="logo" onclick="showPage('home'); return false;">
+                L'AUBERGE<br><span>DE LA CHARRUE</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home'); return false;">Accueil</a></li>
+                <li><a href="#" onclick="showPage('menus'); return false;">Menus</a></li>
+                <li><a href="#" onclick="showPage('suggestions'); return false;">Suggestions</a></li>
+                <li><a href="#" onclick="showPage('vins'); return false;">Vins</a></li>
+                <li><a href="#" onclick="showPage('about'); return false;">À Propos</a></li>
+                <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PAGE: HOME -->
+    <div id="home" class="page active">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bienvenue à l'Auberge de la Charrue</h1>
+                <p class="hero-tagline">« Tradition, saveur et chaleur authentiques »</p>
+                <p class="hero-description">
+                    Découvrez une cuisine généreuse et authentique dans une atmosphère chaleureuse et conviviale. 
+                    Depuis des générations, la famille Allegra cultive l'art de recevoir et de régaler ses convives.
+                </p>
+                <button class="btn" onclick="showPage('suggestions');">Découvrir nos Suggestions</button>
+            </div>
+        </section>
+
+        <section class="suggestions-preview">
+            <div class="suggestions-content">
+                <h2>Nos Suggestions du Moment</h2>
+                <p>Goûtez à nos créations saisonnières, élaborées par nos chefs avec passion et les meilleurs produits frais de saison.</p>
+                <button class="btn" onclick="showPage('suggestions');">Voir les Suggestions</button>
+            </div>
+        </section>
+
+        <section class="family-section">
+            <h2>La Famille Allegra</h2>
+            <div class="family-content">
+                <p>
+                    Depuis plus de trois générations, la famille Allegra perpétue la tradition de l'auberge avec dévouement et passion. 
+                    Nos parents nous ont transmis l'amour de la bonne cuisine et du partage autour de la table. 
+                    Chaque plat que nous proposons raconte notre histoire, celle d'une famille attachée à l'authenticité et à l'excellence.
+                </p>
+                <button class="btn btn-secondary" onclick="showPage('about');">En Savoir Plus</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE: MENUS -->
+    <div id="menus" class="page">
+        <div class="page-header">
+            <h1>Nos Menus</h1>
+            <p>Une sélection raffinée pour tous les moments</p>
+        </div>
+        <div class="page-content">
+            <div class="menu-item">
+                <div class="menu-item-content">
+                    <h3>Menu Découverte</h3>
+                    <p>4 plats savoureux</p>
+                    <div class="menu-item-desc">
+                        Un voyage culinaire à travers nos spécialités. 
+                        Apéritif, entrée, plat principal, dessert et digestif inclus.
+                    </div>
+                </div>
+                <div class="menu-item-price">CHF 68</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-content">
+                    <h3>Menu Prestige</h3>
+                    <p>5 plats gourmands</p>
+                    <div class="menu-item-desc">
+                        Notre menu gastronomique avec mise en place élégante, 
+                        service soigné et accords mets-vins personnalisés.
+                    </div>
+                </div>
+                <div class="menu-item-price">CHF 95</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-content">
+                    <h3>Menu à la Carte</h3>
+                    <p>Liberté de choix</p>
+                    <div class="menu-item-desc">
+                        Composez votre menu selon vos envies parmi nos plats signature 
+                        et nos créations du moment.
+                    </div>
+                </div>
+                <div class="menu-item-price">À partir de CHF 35</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE: SUGGESTIONS -->
+    <div id="suggestions" class="page">
+        <div class="page-header">
+            <h1>Suggestions du Moment</h1>
+            <p>Inspirées par les saisons et les meilleures récoltes</p>
+        </div>
+        <div class="page-content">
+            <div class="menu-item">
+                <div class="menu-item-content">
+                    <h3>Risotto aux Champignons de Saison</h3>
+                    <p>Avec parmesan affiné et truffe noire</p>
+                    <div class="menu-item-desc">
+                        Un classique réinterprété avec délicatesse, mettant en avant 
+                        les champignons sélectionnés par notre chef auprès de producteurs locaux.
+                    </div>
+                </div>
+                <div class="menu-item-price">CHF 32</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-content">
+                    <h3>Filet de Poisson Blanc Sauvage</h3>
+                    <p>Beurre blanc citronné et légumes de saison</p>
+                    <div class="menu-item-desc">
+                        Une chair délicate subtilement assaisonnée, accompagnée de nos 
+                        légumes les plus frais du marché du jour.
+                    </div>
+                </div>
+                <div class="menu-item-price">CHF 38</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-content">
+                    <h3>Agneau de Montagne Rôti</h3>
+                    <p>Jus corsé et mignardises caramélisées</p>
+                    <div class="menu-item-desc">
+                        Viande de qualité supérieure, élevée selon les traditions alpines, 
+                        cuite à la perfection et servie avec nos accompagnements signatures.
+                    </div>
+                </div>
+                <div class="menu-item-price">CHF 42</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-content">
+                    <h3>Tarte Sablée aux Fruits Rouges</h3>
+                    <p>Crème pâtissière et coulis de framboise</p>
+                    <div class="menu-item-desc">
+                        Notre pâtisserie maison, garnie des fruits rouges les plus savoureux, 
+                        un moment sucré à savourer avec délectation.
+                    </div>
+                </div>
+                <div class="menu-item-price">CHF 14</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE: WINES -->
+    <div id="vins" class="page">
+        <div class="page-header">
+            <h1>Notre Carte des Vins</h1>
+            <p>Sélection minutieuse de vignobles prestigieux</p>
+        </div>
+        <div class="page-content">
+            <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--accent-gold);">Vins Suisses</h3>
+            
+            <div class="menu-item">
+                <div class="menu-item-content">
+                    <h3>Chasselas de Lavaux</h3>
+                    <p>Appellation d'Origine Contrôlée</p>
+                    <div class="menu-item-desc">
+                        Un grand blanc suisse, fruité et élégant, parfait avec nos poissons et fruits de mer.
+                    </div>
+                </div>
+                <div class="menu-item-price">CHF 45</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-content">
+                    <h3>Petite Arvine du Valais</h3>
+                    <p>Riche et minéral</p>
+                    <div class="menu-item-desc">
+                        Un cépage noble du Valais, offrant une minéralité unique et des arômes complexes.
+                    </div>
+                </div>
+                <div class="menu-item-price">CHF 52</div>
+            </div>
+
+            <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--accent-gold);">Vins Internationaux</h3>
+
+            <div class="menu-item">
+                <div class="menu-item-content">
+                    <h3>Bourgogne Rouge AOC</h3>
+                    <p>Pinot Noir finesse</p>
+                    <div class="menu-item-desc">
+                        Élégance et finesse en bouteille, accompagne merveilleusement nos viandes.
+                    </div>
+                </div>
+                <div class="menu-item-price">CHF 58</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-content">
+                    <h3>Bordeaux Supérieur</h3>
+                    <p>Sélection premium</p>
+                    <div class="menu-item-desc">
+                        Structure robuste et arômes profonds pour les moments festifs.
+                    </div>
+                </div>
+                <div class="menu-item-price">CHF 65</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE: ABOUT -->
+    <div id="about" class="page">
+        <div class="page-header">
+            <h1>À Propos de Nous</h1>
+            <p>L'Histoire de la Famille Allegra</p>
+        </div>
+        <div class="page-content">
+            <div style="font-size: 1.1rem; line-height: 1.9; color: var(--text-dark);">
+                <p style="margin-bottom: 1.5rem;">
+                    <strong>La famille Allegra</strong> perpétue depuis trois générations les traditions d'hospitalité et d'excellence culinaire. 
+                    Tout a commencé en 1967 lorsque les grands-parents décidèrent de transformer leur demeure en auberge accueillante.
+                </p>
+
+                <p style="margin-bottom: 1.5rem;">
+                    <strong>Notre philosophie :</strong> Nous croyons qu'un bon repas est avant tout un moment d'échange, une pause dans le quotidien 
+                    où l'on peut se retrouver avec famille et amis. Chaque plat est préparé avec soin, utilisant des produits frais sélectionnés 
+                    auprès des meilleurs producteurs locaux. Nous respectons les saisons et les traditions régionales en innovant constamment.
+                </p>
+
+                <p style="margin-bottom: 1.5rem;">
+                    <strong>Nos valeurs :</strong>
+                    <br>• <strong>L'authenticité</strong> - Nos recettes honores les traditions culinaires suisses
+                    <br>• <strong>La qualité</strong> - Nous sélectionnons uniquement les meilleurs ingrédients
+                    <br>• <strong>L'hospitalité</strong> - Votre bien-être et satisfaction sont notre priorité
+                    <br>• <strong>La durabilité</strong> - Nous travaillons avec des producteurs responsables
+                </p>
+
+                <p>
+                    Aujourd'hui, les enfants d'Allegra perpétuent ce bel héritage avec la même passion que leurs parents. 
+                    L'Auberge de la Charrue n'est pas qu'un restaurant, c'est un refuge gastronomique où la tradition rencontre l'innovation, 
+                    et où chaque convive se sent accueilli comme un ami de la famille.
+                </p>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(160, 130, 109, 0.05)); border-radius: 8px;">
+                <p style="font-style: italic; color: var(--accent-warm); margin-bottom: 1rem;">
+                    « À L'Auberge de la Charrue, chaque repas est une histoire que nous adorons raconter »
+                </p>
+                <p style="font-weight: 500;">— La Famille Allegra</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE: CONTACT -->
+    <div id="contact" class="page">
+        <div class="page-header">
+            <h1>Nous Contacter</h1>
+            <p>Nous serions ravi de vous accueillir</p>
+        </div>
+        <div class="page-content">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
+                <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.05), rgba(160, 130, 109, 0.03)); border-radius: 8px;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent-gold);">📍 Adresse</h3>
+                    <p style="line-height: 1.8;">
+                        L'Auberge de la Charrue<br>
+                        [Rue à compléter]<br>
+                        [Code Postal, Ville]<br>
+                        Suisse
+                    </p>
+                </div>
+
+                <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.05), rgba(160, 130, 109, 0.03)); border-radius: 8px;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent-gold);">📞 Téléphone</h3>
+                    <p style="line-height: 1.8;">
+                        <strong>+41 [numéro]</strong><br>
+                        Ouvert du lundi au dimanche<br>
+                        Réservations conseillées
+                    </p>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
+                <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.05), rgba(160, 130, 109, 0.03)); border-radius: 8px;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent-gold);">✉️ Email</h3>
+                    <p style="line-height: 1.8;">
+                        <a href="mailto:contact@aubergelacharrue.ch" style="color: var(--accent-gold); text-decoration: none; font-weight: 500;">
+                            à mettre adress mail
+                        </a>
+                    </p>
+                </div>
+
+                <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.05), rgba(160, 130, 109, 0.03)); border-radius: 8px;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent-gold);">🕐 Horaires</h3>
+                    <p style="line-height: 1.8;">
+                        Lun - Dim: 11h30 - 22h00<br>
+                        Fermé le [jour à compléter]
+                    </p>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;">Envoyez-nous un message</h3>
+                
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Téléphone (optionnel)</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; text-align: center;">Envoyer le Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-divider"></div>
+        <p><strong>L'Auberge de la Charrue</strong></p>
+        <p>aubergelacharrue.ch</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">© 2026 Famille Allegra. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Masquer toutes les pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Afficher la page demandée
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+        }
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            alert('Merci pour votre message! Nous vous répondrons dans les plus brefs délais.');
+            event.target.reset();
+        }
+
+        // Animation au scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = 'var(--shadow-soft)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
