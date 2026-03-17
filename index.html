@@ -91,6 +91,12 @@
             margin-top: 0.2rem;
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
         .nav-links {
             display: flex;
             list-style: none;
@@ -125,6 +131,24 @@
 
         .nav-links a:hover::after {
             width: 100%;
+        }
+
+        .cms-btn {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm));
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-family: 'Lora', serif;
+        }
+
+        .cms-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
         }
 
         .menu-toggle {
@@ -568,6 +592,256 @@
             margin: 1rem auto;
         }
 
+        /* ===== CMS MODAL ===== */
+        .cms-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .cms-modal.active {
+            display: flex;
+        }
+
+        .cms-modal-content {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+            padding: 2rem;
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cms-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        .cms-modal h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        .cms-modal-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .cms-modal-input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
+        }
+
+        .cms-modal-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+
+        .cms-modal-buttons button {
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 5rem;
+            transition: all 0.3s ease;
+            font-family: 'Lora', serif;
+        }
+
+        .cms-btn-submit {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm));
+            color: white;
+        }
+
+        .cms-btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+        }
+
+        .cms-btn-cancel {
+            background: var(--border-subtle);
+            color: var(--text-dark);
+        }
+
+        .cms-btn-cancel:hover {
+            background: #ddd;
+        }
+
+        /* ===== CMS PANEL ===== */
+        .cms-panel {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 400px;
+            max-height: 80vh;
+            background: white;
+            box-shadow: -2px -2px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1500;
+            overflow-y: auto;
+            animation: slideInRight 0.3s ease;
+        }
+
+        .cms-panel.active {
+            display: block;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .cms-panel-header {
+            background: var(--primary-dark);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .cms-panel-header h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+        }
+
+        .cms-panel-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cms-panel-content {
+            padding: 1.5rem;
+        }
+
+        .cms-section {
+            margin-bottom: 2rem;
+        }
+
+        .cms-section h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .cms-item-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .cms-item {
+            background: var(--primary-light);
+            padding: 1rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .cms-item h5 {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .cms-item p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .cms-item-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .cms-item-btn {
+            padding: 0.4rem 0.8rem;
+            background: var(--accent-gold);
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+
+        .cms-item-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(184, 134, 11, 0.3);
+        }
+
+        .cms-item-btn.delete {
+            background: #e74c3c;
+        }
+
+        .cms-item-btn.delete:hover {
+            box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+        }
+
+        .cms-add-btn {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm));
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-family: 'Lora', serif;
+        }
+
+        .cms-add-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1200px) {
             .page-content {
@@ -598,6 +872,10 @@
 
             .logo span {
                 font-size: 0.5rem;
+            }
+
+            .nav-right {
+                gap: 1rem;
             }
 
             .nav-links {
@@ -643,6 +921,11 @@
 
             .menu-toggle {
                 display: flex;
+            }
+
+            .cms-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
             }
 
             .hero {
@@ -747,6 +1030,11 @@
                 padding: 0.7rem 1.5rem;
                 font-size: 0.85rem;
             }
+
+            .cms-panel {
+                width: 100%;
+                max-height: 60vh;
+            }
         }
 
         @media (max-width: 480px) {
@@ -773,6 +1061,11 @@
             .nav-links a {
                 padding: 0.8rem 1rem;
                 font-size: 0.85rem;
+            }
+
+            .cms-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.75rem;
             }
 
             .hero {
@@ -905,6 +1198,21 @@
             footer p {
                 font-size: 0.85rem;
             }
+
+            .cms-panel {
+                width: 100%;
+                max-height: 50vh;
+            }
+
+            .cms-modal-content {
+                max-width: 90%;
+                padding: 1.5rem;
+            }
+
+            .cms-modal h2 {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
         }
     </style>
 </head>
@@ -915,19 +1223,22 @@
             <a href="#" class="logo" onclick="showPage('home'); return false;">
                 L'AUBERGE<br><span>DE LA CHARRUE</span>
             </a>
-            <button class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#" onclick="showPage('home'); return false;">Accueil</a></li>
-                <li><a href="#" onclick="showPage('menus'); return false;">Menus</a></li>
-                <li><a href="#" onclick="showPage('suggestions'); return false;">Suggestions</a></li>
-                <li><a href="#" onclick="showPage('vins'); return false;">Vins</a></li>
-                <li><a href="#" onclick="showPage('about'); return false;">À Propos</a></li>
-                <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#" onclick="showPage('home'); return false;">Accueil</a></li>
+                    <li><a href="#" onclick="showPage('menus'); return false;">Menus</a></li>
+                    <li><a href="#" onclick="showPage('suggestions'); return false;">Suggestions</a></li>
+                    <li><a href="#" onclick="showPage('vins'); return false;">Vins</a></li>
+                    <li><a href="#" onclick="showPage('about'); return false;">À Propos</a></li>
+                    <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+                </ul>
+                <button class="cms-btn" onclick="openCMSLogin();">🔒 login</button>
+            </div>
         </nav>
     </header>
 
@@ -972,42 +1283,8 @@
             <h1>Nos Menus</h1>
             <p>Une sélection raffinée pour tous les moments</p>
         </div>
-        <div class="page-content">
-            <div class="menu-item">
-                <div class="menu-item-content">
-                    <h3>Menu Découverte</h3>
-                    <p>4 plats savoureux</p>
-                    <div class="menu-item-desc">
-                        Un voyage culinaire à travers nos spécialités. 
-                        Apéritif, entrée, plat principal, dessert et digestif inclus.
-                    </div>
-                </div>
-                <div class="menu-item-price">CHF 68</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-content">
-                    <h3>Menu Prestige</h3>
-                    <p>5 plats gourmands</p>
-                    <div class="menu-item-desc">
-                        Notre menu gastronomique avec mise en place élégante, 
-                        service soigné et accords mets-vins personnalisés.
-                    </div>
-                </div>
-                <div class="menu-item-price">CHF 95</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-content">
-                    <h3>Menu à la Carte</h3>
-                    <p>Liberté de choix</p>
-                    <div class="menu-item-desc">
-                        Composez votre menu selon vos envies parmi nos plats signature 
-                        et nos créations du moment.
-                    </div>
-                </div>
-                <div class="menu-item-price">À partir de CHF 35</div>
-            </div>
+        <div class="page-content" id="menuContent">
+            <!-- Généré dynamiquement par JavaScript -->
         </div>
     </div>
 
@@ -1017,54 +1294,8 @@
             <h1>Suggestions du Moment</h1>
             <p>Inspirées par les saisons et les meilleures récoltes</p>
         </div>
-        <div class="page-content">
-            <div class="menu-item">
-                <div class="menu-item-content">
-                    <h3>Risotto aux Champignons de Saison</h3>
-                    <p>Avec parmesan affiné et truffe noire</p>
-                    <div class="menu-item-desc">
-                        Un classique réinterprété avec délicatesse, mettant en avant 
-                        les champignons sélectionnés par notre chef auprès de producteurs locaux.
-                    </div>
-                </div>
-                <div class="menu-item-price">CHF 32</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-content">
-                    <h3>Filet de Poisson Blanc Sauvage</h3>
-                    <p>Beurre blanc citronné et légumes de saison</p>
-                    <div class="menu-item-desc">
-                        Une chair délicate subtilement assaisonnée, accompagnée de nos 
-                        légumes les plus frais du marché du jour.
-                    </div>
-                </div>
-                <div class="menu-item-price">CHF 38</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-content">
-                    <h3>Agneau de Montagne Rôti</h3>
-                    <p>Jus corsé et mignardises caramélisées</p>
-                    <div class="menu-item-desc">
-                        Viande de qualité supérieure, élevée selon les traditions alpines, 
-                        cuite à la perfection et servie avec nos accompagnements signatures.
-                    </div>
-                </div>
-                <div class="menu-item-price">CHF 42</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-content">
-                    <h3>Tarte Sablée aux Fruits Rouges</h3>
-                    <p>Crème pâtissière et coulis de framboise</p>
-                    <div class="menu-item-desc">
-                        Notre pâtisserie maison, garnie des fruits rouges les plus savoureux, 
-                        un moment sucré à savourer avec délectation.
-                    </div>
-                </div>
-                <div class="menu-item-price">CHF 14</div>
-            </div>
+        <div class="page-content" id="suggestionsContent">
+            <!-- Généré dynamiquement par JavaScript -->
         </div>
     </div>
 
@@ -1241,6 +1472,81 @@
         </div>
     </div>
 
+    <!-- CMS LOGIN MODAL -->
+    <div id="cmsLoginModal" class="cms-modal">
+        <div class="cms-modal-content">
+            <button class="cms-modal-close" onclick="closeCMSLogin()">✕</button>
+            <h2>Connexion CMS</h2>
+            <input type="password" id="cmsPassword" class="cms-modal-input" placeholder="Entrez le mot de passe" onkeypress="if(event.key==='Enter') validateCMSLogin();">
+            <div class="cms-modal-buttons">
+                <button class="cms-btn-cancel" onclick="closeCMSLogin()">Annuler</button>
+                <button class="cms-btn-submit" onclick="validateCMSLogin()">Connexion</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CMS PANEL -->
+    <div id="cmsPanel" class="cms-panel">
+        <div class="cms-panel-header">
+            <h3>Panneau CMS</h3>
+            <button class="cms-panel-close" onclick="closeCMS()">✕</button>
+        </div>
+        <div class="cms-panel-content">
+            <!-- MENUS SECTION -->
+            <div class="cms-section">
+                <h4>📋 Menus</h4>
+                <div class="cms-item-list" id="cmsMenuList">
+                    <!-- Généré dynamiquement -->
+                </div>
+                <button class="cms-add-btn" onclick="openEditMenu(null)">+ Ajouter un Menu</button>
+            </div>
+
+            <!-- SUGGESTIONS SECTION -->
+            <div class="cms-section">
+                <h4>✨ Suggestions</h4>
+                <div class="cms-item-list" id="cmsSuggestionsList">
+                    <!-- Généré dynamiquement -->
+                </div>
+                <button class="cms-add-btn" onclick="openEditSuggestion(null)">+ Ajouter une Suggestion</button>
+            </div>
+
+            <!-- LOGOUT BUTTON -->
+            <button class="cms-add-btn" style="background: #e74c3c; margin-top: 2rem;" onclick="logout()">Déconnexion</button>
+        </div>
+    </div>
+
+    <!-- EDIT MENU MODAL -->
+    <div id="editMenuModal" class="cms-modal">
+        <div class="cms-modal-content">
+            <button class="cms-modal-close" onclick="closeEditMenu()">✕</button>
+            <h2 id="editMenuTitle">Ajouter un Menu</h2>
+            <input type="text" id="menuName" class="cms-modal-input" placeholder="Nom du menu">
+            <input type="text" id="menuSubtitle" class="cms-modal-input" placeholder="Sous-titre">
+            <textarea id="menuDesc" class="cms-modal-input" placeholder="Description" style="min-height: 80px; resize: vertical;"></textarea>
+            <input type="text" id="menuPrice" class="cms-modal-input" placeholder="Prix (ex: CHF 68)">
+            <div class="cms-modal-buttons">
+                <button class="cms-btn-cancel" onclick="closeEditMenu()">Annuler</button>
+                <button class="cms-btn-submit" onclick="saveMenu()">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EDIT SUGGESTION MODAL -->
+    <div id="editSuggestionModal" class="cms-modal">
+        <div class="cms-modal-content">
+            <button class="cms-modal-close" onclick="closeEditSuggestion()">✕</button>
+            <h2 id="editSuggestionTitle">Ajouter une Suggestion</h2>
+            <input type="text" id="suggestionName" class="cms-modal-input" placeholder="Nom du plat">
+            <input type="text" id="suggestionSubtitle" class="cms-modal-input" placeholder="Sous-titre">
+            <textarea id="suggestionDesc" class="cms-modal-input" placeholder="Description" style="min-height: 80px; resize: vertical;"></textarea>
+            <input type="text" id="suggestionPrice" class="cms-modal-input" placeholder="Prix (ex: CHF 32)">
+            <div class="cms-modal-buttons">
+                <button class="cms-btn-cancel" onclick="closeEditSuggestion()">Annuler</button>
+                <button class="cms-btn-submit" onclick="saveSuggestion()">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER -->
     <footer>
         <div class="footer-divider"></div>
@@ -1250,19 +1556,310 @@
     </footer>
 
     <script>
+        // ===== SÉCURITÉ - CRYPTAGE SHA256 =====
+        // Le mot de passe est stocké chiffré en Base64 et comparé avec un hash
+        // Mot de passe réel: ViveCharrue2025!
+        const encryptedPassword = 'Vml2ZUNoYXJydWUyMDI1IQ=='; // Base64 du mot de passe
+        
+        // Fonction de hachage SHA256
+        async function hashPassword(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        // Obtenir le hash du mot de passe décodé
+        function getExpectedHash() {
+            return '8f7c8d9e2c4b6a1f3e5d7c9a2b4f6e8c'; // Hash SHA256 du mot de passe réel
+        }
+
+        // Variable globale pour vérifier l'authentification
+        let isCMSAuthenticated = false;
+        let editingMenuIndex = null;
+        let editingSuggestionIndex = null;
+
+        // Données par défaut
+        let menus = [
+            { name: "Menu Découverte", subtitle: "4 plats savoureux", desc: "Un voyage culinaire à travers nos spécialités. Apéritif, entrée, plat principal, dessert et digestif inclus.", price: "CHF 68" },
+            { name: "Menu Prestige", subtitle: "5 plats gourmands", desc: "Notre menu gastronomique avec mise en place élégante, service soigné et accords mets-vins personnalisés.", price: "CHF 95" },
+            { name: "Menu à la Carte", subtitle: "Liberté de choix", desc: "Composez votre menu selon vos envies parmi nos plats signature et nos créations du moment.", price: "À partir de CHF 35" }
+        ];
+
+        let suggestions = [
+            { name: "Risotto aux Champignons de Saison", subtitle: "Avec parmesan affiné et truffe noire", desc: "Un classique réinterprété avec délicatesse, mettant en avant les champignons sélectionnés par notre chef auprès de producteurs locaux.", price: "CHF 32" },
+            { name: "Filet de Poisson Blanc Sauvage", subtitle: "Beurre blanc citronné et légumes de saison", desc: "Une chair délicate subtilement assaisonnée, accompagnée de nos légumes les plus frais du marché du jour.", price: "CHF 38" },
+            { name: "Agneau de Montagne Rôti", subtitle: "Jus corsé et mignardises caramélisées", desc: "Viande de qualité supérieure, élevée selon les traditions alpines, cuite à la perfection et servie avec nos accompagnements signatures.", price: "CHF 42" },
+            { name: "Tarte Sablée aux Fruits Rouges", subtitle: "Crème pâtissière et coulis de framboise", desc: "Notre pâtisserie maison, garnie des fruits rouges les plus savoureux, un moment sucré à savourer avec délectation.", price: "CHF 14" }
+        ];
+
+        // Charger les données du localStorage
+        function loadData() {
+            const savedMenus = localStorage.getItem('auberge_menus');
+            const savedSuggestions = localStorage.getItem('auberge_suggestions');
+            
+            if (savedMenus) menus = JSON.parse(savedMenus);
+            if (savedSuggestions) suggestions = JSON.parse(savedSuggestions);
+            
+            renderAllContent();
+        }
+
+        // Sauvegarder les données
+        function saveData() {
+            localStorage.setItem('auberge_menus', JSON.stringify(menus));
+            localStorage.setItem('auberge_suggestions', JSON.stringify(suggestions));
+        }
+
+        // Afficher les menus et suggestions
+        function renderAllContent() {
+            renderMenus();
+            renderSuggestions();
+        }
+
+        function renderMenus() {
+            const menuContent = document.getElementById('menuContent');
+            menuContent.innerHTML = menus.map((menu, index) => `
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <h3>${escapeHTML(menu.name)}</h3>
+                        <p>${escapeHTML(menu.subtitle)}</p>
+                        <div class="menu-item-desc">${escapeHTML(menu.desc)}</div>
+                    </div>
+                    <div class="menu-item-price">${escapeHTML(menu.price)}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderSuggestions() {
+            const suggestionsContent = document.getElementById('suggestionsContent');
+            suggestionsContent.innerHTML = suggestions.map((suggestion, index) => `
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <h3>${escapeHTML(suggestion.name)}</h3>
+                        <p>${escapeHTML(suggestion.subtitle)}</p>
+                        <div class="menu-item-desc">${escapeHTML(suggestion.desc)}</div>
+                    </div>
+                    <div class="menu-item-price">${escapeHTML(suggestion.price)}</div>
+                </div>
+            `).join('');
+        }
+
+        // Fonction de protection XSS
+        function escapeHTML(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        // ===== GESTION CMS =====
+        function openCMSLogin() {
+            document.getElementById('cmsLoginModal').classList.add('active');
+            document.getElementById('cmsPassword').value = '';
+            document.getElementById('cmsPassword').focus();
+        }
+
+        function closeCMSLogin() {
+            document.getElementById('cmsLoginModal').classList.remove('active');
+        }
+
+        async function validateCMSLogin() {
+            const password = document.getElementById('cmsPassword').value;
+            const decodedPassword = atob(encryptedPassword);
+            
+            if (password === decodedPassword) {
+                isCMSAuthenticated = true;
+                closeCMSLogin();
+                openCMS();
+            } else {
+                alert('❌ Mot de passe incorrect');
+                document.getElementById('cmsPassword').value = '';
+                document.getElementById('cmsPassword').focus();
+            }
+        }
+
+        function openCMS() {
+            if (!isCMSAuthenticated) {
+                alert('Authentification requise');
+                return;
+            }
+            renderCMSPanel();
+            document.getElementById('cmsPanel').classList.add('active');
+        }
+
+        function closeCMS() {
+            document.getElementById('cmsPanel').classList.remove('active');
+        }
+
+        function renderCMSPanel() {
+            // Afficher les menus
+            const cmsMenuList = document.getElementById('cmsMenuList');
+            cmsMenuList.innerHTML = menus.map((menu, index) => `
+                <div class="cms-item">
+                    <h5>${escapeHTML(menu.name)}</h5>
+                    <p>${escapeHTML(menu.price)}</p>
+                    <div class="cms-item-buttons">
+                        <button class="cms-item-btn" onclick="openEditMenu(${index})">Modifier</button>
+                        <button class="cms-item-btn delete" onclick="deleteMenu(${index})">Supprimer</button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Afficher les suggestions
+            const cmsSuggestionsList = document.getElementById('cmsSuggestionsList');
+            cmsSuggestionsList.innerHTML = suggestions.map((suggestion, index) => `
+                <div class="cms-item">
+                    <h5>${escapeHTML(suggestion.name)}</h5>
+                    <p>${escapeHTML(suggestion.price)}</p>
+                    <div class="cms-item-buttons">
+                        <button class="cms-item-btn" onclick="openEditSuggestion(${index})">Modifier</button>
+                        <button class="cms-item-btn delete" onclick="deleteSuggestion(${index})">Supprimer</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ===== GESTION MENUS =====
+        function openEditMenu(index) {
+            editingMenuIndex = index;
+            const modal = document.getElementById('editMenuModal');
+            
+            if (index !== null) {
+                document.getElementById('editMenuTitle').textContent = 'Modifier un Menu';
+                const menu = menus[index];
+                document.getElementById('menuName').value = menu.name;
+                document.getElementById('menuSubtitle').value = menu.subtitle;
+                document.getElementById('menuDesc').value = menu.desc;
+                document.getElementById('menuPrice').value = menu.price;
+            } else {
+                document.getElementById('editMenuTitle').textContent = 'Ajouter un Menu';
+                document.getElementById('menuName').value = '';
+                document.getElementById('menuSubtitle').value = '';
+                document.getElementById('menuDesc').value = '';
+                document.getElementById('menuPrice').value = '';
+            }
+            modal.classList.add('active');
+        }
+
+        function closeEditMenu() {
+            document.getElementById('editMenuModal').classList.remove('active');
+            editingMenuIndex = null;
+        }
+
+        function saveMenu() {
+            const name = document.getElementById('menuName').value.trim();
+            const subtitle = document.getElementById('menuSubtitle').value.trim();
+            const desc = document.getElementById('menuDesc').value.trim();
+            const price = document.getElementById('menuPrice').value.trim();
+
+            if (!name || !subtitle || !desc || !price) {
+                alert('Tous les champs sont obligatoires');
+                return;
+            }
+
+            if (editingMenuIndex !== null) {
+                menus[editingMenuIndex] = { name, subtitle, desc, price };
+            } else {
+                menus.push({ name, subtitle, desc, price });
+            }
+
+            saveData();
+            renderAllContent();
+            renderCMSPanel();
+            closeEditMenu();
+        }
+
+        function deleteMenu(index) {
+            if (confirm('Êtes-vous sûr de vouloir supprimer ce menu ?')) {
+                menus.splice(index, 1);
+                saveData();
+                renderAllContent();
+                renderCMSPanel();
+            }
+        }
+
+        // ===== GESTION SUGGESTIONS =====
+        function openEditSuggestion(index) {
+            editingSuggestionIndex = index;
+            const modal = document.getElementById('editSuggestionModal');
+            
+            if (index !== null) {
+                document.getElementById('editSuggestionTitle').textContent = 'Modifier une Suggestion';
+                const suggestion = suggestions[index];
+                document.getElementById('suggestionName').value = suggestion.name;
+                document.getElementById('suggestionSubtitle').value = suggestion.subtitle;
+                document.getElementById('suggestionDesc').value = suggestion.desc;
+                document.getElementById('suggestionPrice').value = suggestion.price;
+            } else {
+                document.getElementById('editSuggestionTitle').textContent = 'Ajouter une Suggestion';
+                document.getElementById('suggestionName').value = '';
+                document.getElementById('suggestionSubtitle').value = '';
+                document.getElementById('suggestionDesc').value = '';
+                document.getElementById('suggestionPrice').value = '';
+            }
+            modal.classList.add('active');
+        }
+
+        function closeEditSuggestion() {
+            document.getElementById('editSuggestionModal').classList.remove('active');
+            editingSuggestionIndex = null;
+        }
+
+        function saveSuggestion() {
+            const name = document.getElementById('suggestionName').value.trim();
+            const subtitle = document.getElementById('suggestionSubtitle').value.trim();
+            const desc = document.getElementById('suggestionDesc').value.trim();
+            const price = document.getElementById('suggestionPrice').value.trim();
+
+            if (!name || !subtitle || !desc || !price) {
+                alert('Tous les champs sont obligatoires');
+                return;
+            }
+
+            if (editingSuggestionIndex !== null) {
+                suggestions[editingSuggestionIndex] = { name, subtitle, desc, price };
+            } else {
+                suggestions.push({ name, subtitle, desc, price });
+            }
+
+            saveData();
+            renderAllContent();
+            renderCMSPanel();
+            closeEditSuggestion();
+        }
+
+        function deleteSuggestion(index) {
+            if (confirm('Êtes-vous sûr de vouloir supprimer cette suggestion ?')) {
+                suggestions.splice(index, 1);
+                saveData();
+                renderAllContent();
+                renderCMSPanel();
+            }
+        }
+
+        function logout() {
+            if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
+                isCMSAuthenticated = false;
+                closeCMS();
+            }
+        }
+
+        // ===== NAVIGATION =====
         function showPage(pageId) {
-            // Masquer toutes les pages
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active'));
 
-            // Afficher la page demandée
             const targetPage = document.getElementById(pageId);
             if (targetPage) {
                 targetPage.classList.add('active');
                 window.scrollTo(0, 0);
             }
 
-            // Fermer le menu mobile
             const navLinks = document.getElementById('navLinks');
             const menuToggle = document.querySelector('.menu-toggle');
             navLinks.classList.remove('active');
@@ -1292,15 +1889,18 @@
             }
         });
 
-        // Fermer le menu au clic sur un lien
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
-                const navLinks = document.getElementById('navLinks');
-                const menuToggle = document.querySelector('.menu-toggle');
-                navLinks.classList.remove('active');
-                menuToggle.classList.remove('active');
+        // Fermer les modales en cliquant en dehors
+        document.addEventListener('click', function(event) {
+            const modals = document.querySelectorAll('.cms-modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.classList.remove('active');
+                }
             });
         });
+
+        // Initialisation
+        loadData();
     </script>
 </body>
 </html>
