@@ -1275,7 +1275,7 @@
                     Découvrez une cuisine généreuse et authentique dans une atmosphère chaleureuse et conviviale.
                     Depuis des générations, la famille Allegra cultive l'art de recevoir et de régaler ses convives.
                 </p>
-                <button class="btn" onclick="showPage('suggestions');">Découvrir nos Suggestions</button>
+                <button class="btn" onclick="showPage('menus');">🍽️ Découvrez notre Menu </button>
             </div>
         </section>
 
@@ -1284,7 +1284,10 @@
                 <h2>Nos Suggestions du Moment</h2>
                 <p>Goûtez à nos créations saisonnières, élaborées par nos chefs avec passion et les meilleurs produits
                     frais de saison.</p>
-                <button class="btn" onclick="showPage('suggestions');">Voir les Suggestions</button>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn" onclick="showPage('suggestions');">Voir les Suggestions</button>
+                    <button class="btn btn-secondary" onclick="showPage('menus');">⭐ Voir le Plat du Jour</button>
+                </div>
             </div>
         </section>
 
@@ -1306,9 +1309,15 @@
     <!-- PAGE: MENUS -->
     <div id="menus" class="page">
         <div class="page-header">
-            <h1>Nos Menus</h1>
-            <p>Une sélection raffinée pour tous les moments</p>
+            <h1>⭐ Plat du Jour & Notre Menus ⭐</h1>
+            <p>Sélection exclusive et raffinée</p>
         </div>
+        
+        <!-- PLAT DU JOUR EN HAUT -->
+        <div class="page-content" id="dishOfTheDayContent" style="background: linear-gradient(135deg, rgba(184, 134, 11, 0.08) 0%, rgba(160, 130, 109, 0.05) 100%); border-radius: 8px; padding: 2rem; margin-bottom: 3rem;">
+            <!-- Généré dynamiquement par JavaScript -->
+        </div>
+
         <div class="page-content" id="menuContent">
             <!-- Généré dynamiquement par JavaScript -->
         </div>
@@ -1501,6 +1510,15 @@
                 <button class="cms-add-btn" onclick="openEditSuggestion(null)">+ Ajouter une Suggestion</button>
             </div>
 
+            <!-- DISH OF THE DAY SECTION -->
+            <div class="cms-section">
+                <h4>⭐ Plat du Jour</h4>
+                <div class="cms-item-list" id="cmsDishOfTheDayList">
+                    <!-- Généré dynamiquement -->
+                </div>
+                <button class="cms-add-btn" onclick="openEditDishOfTheDay()">✏️ Éditer le Plat du Jour</button>
+            </div>
+
             <!-- WINES SECTION -->
             <div class="cms-section">
                 <h4>🍷 Vins</h4>
@@ -1567,6 +1585,23 @@
         </div>
     </div>
 
+    <!-- EDIT DISH OF THE DAY MODAL -->
+    <div id="editDishOfTheDayModal" class="cms-modal">
+        <div class="cms-modal-content">
+            <button class="cms-modal-close" onclick="closeEditDishOfTheDay()">✕</button>
+            <h2 id="editDishOfTheDayTitle">Éditer le Plat du Jour</h2>
+            <input type="text" id="dishOfTheDayName" class="cms-modal-input" placeholder="Nom du plat">
+            <input type="text" id="dishOfTheDaySubtitle" class="cms-modal-input" placeholder="Sous-titre">
+            <textarea id="dishOfTheDayDesc" class="cms-modal-input" placeholder="Description"
+                style="min-height: 80px; resize: vertical;"></textarea>
+            <input type="text" id="dishOfTheDayPrice" class="cms-modal-input" placeholder="Prix (ex: CHF 32)">
+            <div class="cms-modal-buttons">
+                <button class="cms-btn-cancel" onclick="closeEditDishOfTheDay()">Annuler</button>
+                <button class="cms-btn-submit" onclick="saveDishOfTheDay()">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER -->
     <footer>
         <div class="footer-divider"></div>
@@ -1616,15 +1651,19 @@
             { name: "Bordeaux Supérieur", subtitle: "Sélection premium", desc: "Structure robuste et arômes profonds pour les moments festifs.", price: "CHF 65" }
         ];
 
+        let dishOfTheDay = { name: 'Plat du jour', subtitle: 'À découvrir', desc: 'Demandez à notre équipe pour connaître le plat du jour', price: 'Sur demande' };
+
         // Charger les données du localStorage
         function loadData() {
             const savedMenus = localStorage.getItem('auberge_menus');
             const savedSuggestions = localStorage.getItem('auberge_suggestions');
             const savedWines = localStorage.getItem('auberge_wines');
+            const savedDishOfTheDay = localStorage.getItem('auberge_dishOfTheDay');
 
             if (savedMenus) menus = JSON.parse(savedMenus);
             if (savedSuggestions) suggestions = JSON.parse(savedSuggestions);
             if (savedWines) wines = JSON.parse(savedWines);
+            if (savedDishOfTheDay) dishOfTheDay = JSON.parse(savedDishOfTheDay);
 
             renderAllContent();
         }
@@ -1634,13 +1673,33 @@
             localStorage.setItem('auberge_menus', JSON.stringify(menus));
             localStorage.setItem('auberge_suggestions', JSON.stringify(suggestions));
             localStorage.setItem('auberge_wines', JSON.stringify(wines));
+            localStorage.setItem('auberge_dishOfTheDay', JSON.stringify(dishOfTheDay));
         }
 
         // Afficher les menus, suggestions et vins
         function renderAllContent() {
+            renderDishOfTheDay();
             renderMenus();
             renderSuggestions();
             renderWines();
+        }
+
+        function renderDishOfTheDay() {
+            const dishContent = document.getElementById('dishOfTheDayContent');
+            if (dishContent) {
+                dishContent.innerHTML = `
+                    <div class="menu-item" style="border: 3px solid var(--accent-gold); background: linear-gradient(135deg, rgba(184, 134, 11, 0.05) 0%, rgba(160, 130, 109, 0.03) 100%);">
+                        <div class="menu-item-content">
+                            <div>
+                                <h3 style="color: var(--accent-gold);">⭐ ${dishOfTheDay.name}</h3>
+                                <p class="menu-subtitle">${dishOfTheDay.subtitle}</p>
+                                <p class="menu-description">${dishOfTheDay.desc}</p>
+                            </div>
+                            <div class="menu-price" style="color: var(--accent-gold); font-weight: 600;">${dishOfTheDay.price}</div>
+                        </div>
+                    </div>
+                `;
+            }
         }
 
         function renderMenus() {
@@ -1819,6 +1878,16 @@
                     </div>
                 </div>
             `).join('');
+
+            // Afficher le plat du jour
+            const cmsDishOfTheDayList = document.getElementById('cmsDishOfTheDayList');
+            cmsDishOfTheDayList.innerHTML = `
+                <div class="cms-item">
+                    <h5>⭐ ${escapeHTML(dishOfTheDay.name)}</h5>
+                    <p>${escapeHTML(dishOfTheDay.price)}</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 0.3rem;">${escapeHTML(dishOfTheDay.subtitle)}</p>
+                </div>
+            `;
 
             // Afficher les vins
             const cmsWinesList = document.getElementById('cmsWinesList');
@@ -2009,6 +2078,38 @@
                 renderAllContent();
                 renderCMSPanel();
             }
+        }
+
+        // ===== GESTION PLAT DU JOUR =====
+        function openEditDishOfTheDay() {
+            const modal = document.getElementById('editDishOfTheDayModal');
+            document.getElementById('dishOfTheDayName').value = dishOfTheDay.name;
+            document.getElementById('dishOfTheDaySubtitle').value = dishOfTheDay.subtitle;
+            document.getElementById('dishOfTheDayDesc').value = dishOfTheDay.desc;
+            document.getElementById('dishOfTheDayPrice').value = dishOfTheDay.price;
+            modal.classList.add('active');
+        }
+
+        function closeEditDishOfTheDay() {
+            document.getElementById('editDishOfTheDayModal').classList.remove('active');
+        }
+
+        function saveDishOfTheDay() {
+            const name = document.getElementById('dishOfTheDayName').value.trim();
+            const subtitle = document.getElementById('dishOfTheDaySubtitle').value.trim();
+            const desc = document.getElementById('dishOfTheDayDesc').value.trim();
+            const price = document.getElementById('dishOfTheDayPrice').value.trim();
+
+            if (!name || !subtitle || !desc || !price) {
+                alert('Tous les champs sont obligatoires');
+                return;
+            }
+
+            dishOfTheDay = { name, subtitle, desc, price };
+            saveData();
+            renderAllContent();
+            renderCMSPanel();
+            closeEditDishOfTheDay();
         }
 
         function logout() {
