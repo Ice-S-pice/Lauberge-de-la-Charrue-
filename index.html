@@ -1257,6 +1257,7 @@
                     <li><a href="#" onclick="showPage('menus'); return false;">Menus</a></li>
                     <li><a href="#" onclick="showPage('suggestions'); return false;">Suggestions</a></li>
                     <li><a href="#" onclick="showPage('vins'); return false;">Vins</a></li>
+                    <li><a href="#" onclick="showPage('rooms'); return false;">Nos Chambres</a></li>
                     <li><a href="#" onclick="showPage('about'); return false;">À Propos</a></li>
                     <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
                 </ul>
@@ -1345,53 +1346,236 @@
         </div>
     </div>
 
-    <!-- PAGE: ABOUT -->
-    <div id="about" class="page">
+    <!-- PAGE: CHAMBRES -->
+    <div id="rooms" class="page">
         <div class="page-header">
-            <h1>À Propos de Nous</h1>
-            <p>L'Histoire de la Famille Allegra</p>
+            <h1>Nos Chambres</h1>
+            <p>Séjour confortable et reposant</p>
         </div>
         <div class="page-content">
-            <div style="font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+            <div style="font-size: 1rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 2rem;">
+                <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary-dark);">NOS CHAMBRES</h2>
+                
                 <p style="margin-bottom: 1.2rem;">
-                    <strong>La famille Allegra</strong> perpétue depuis trois générations les traditions d'hospitalité
-                    et d'excellence culinaire.
-                    Tout a commencé en 1967 lorsque les grands-parents décidèrent de transformer leur demeure en auberge
-                    accueillante.
+                    L'Auberge de la Charrue vous propose également trois chambres confortables, idéales pour un séjour au calme, à deux pas de Lausanne. Spacieuses et soigneusement aménagées, nos chambres offrent tout le nécessaire pour un séjour agréable et reposant.
                 </p>
 
                 <p style="margin-bottom: 1.2rem;">
-                    <strong>Notre philosophie :</strong> Nous croyons qu'un bon repas est avant tout un moment
-                    d'échange, une pause dans le quotidien
-                    où l'on peut se retrouver avec famille et amis. Chaque plat est préparé avec soin, utilisant des
-                    produits frais sélectionnés
-                    auprès des meilleurs producteurs locaux. Nous respectons les saisons et les traditions régionales en
-                    innovant constamment.
+                    Deux chambres doubles avec lit matrimonial ainsi qu'une chambre triple sont à votre disposition, chacune équipée de sa salle de bain privative avec douche. Pour votre confort, chaque chambre dispose également d'une machine à café, d'un réfrigérateur, d'une bouilloire, ainsi que de tout le nécessaire pour savourer une pause en toute tranquillité.
                 </p>
 
                 <p style="margin-bottom: 1.2rem;">
-                    <strong>Nos valeurs :</strong>
-                    <br>• <strong>L'authenticité</strong> - Nos recettes honores les traditions culinaires suisses
-                    <br>• <strong>La qualité</strong> - Nous sélectionnons uniquement les meilleurs ingrédients
-                    <br>• <strong>L'hospitalité</strong> - Votre bien-être et satisfaction sont notre priorité
-                    <br>• <strong>La durabilité</strong> - Nous travaillons avec des producteurs responsables
-                </p>
-
-                <p>
-                    Aujourd'hui, les enfants d'Allegra perpétuent ce bel héritage avec la même passion que leurs
-                    parents.
-                    L'Auberge de la Charrue n'est pas qu'un restaurant, c'est un refuge gastronomique où la tradition
-                    rencontre l'innovation,
-                    et où chaque convive se sent accueilli comme un ami de la famille.
+                    Un espace commun, aménagé en coin lecture avec fauteuils et livres, est également à votre disposition pour vous offrir un moment de détente dans une atmosphère paisible.
                 </p>
             </div>
 
-            <div
-                style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(160, 130, 109, 0.05)); border-radius: 8px;">
-                <p style="font-style: italic; color: var(--accent-warm); margin-bottom: 0.8rem;">
-                    « À L'Auberge de la Charrue, chaque repas est une histoire que nous adorons raconter »
+            <!-- TABLEAU DES CHAMBRES -->
+            <div style="overflow-x: auto; margin: 2rem 0;">
+                <table style="width: 100%; border-collapse: collapse; background: white;">
+                    <thead>
+                        <tr style="background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm)); color: white;">
+                            <th style="padding: 1rem; text-align: left; border: 1px solid var(--border-subtle); font-weight: 600;">Chambre</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid var(--border-subtle); font-weight: 600;">Description</th>
+                            <th style="padding: 1rem; text-align: center; border: 1px solid var(--border-subtle); font-weight: 600;">Lun-Jeu</th>
+                            <th style="padding: 1rem; text-align: center; border: 1px solid var(--border-subtle); font-weight: 600;">Ven-Dim</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 1rem; border: 1px solid var(--border-subtle); font-weight: 600; color: var(--accent-gold);">Bouton d'Or</td>
+                            <td style="padding: 1rem; border: 1px solid var(--border-subtle);">
+                                <strong>Chambre Double</strong><br>
+                                ✓ Salle de bain privative<br>
+                                ✓ Machine à Café<br>
+                                ✓ Bouilloire<br>
+                                ✓ Wi-Fi
+                            </td>
+                            <td style="padding: 1rem; text-align: center; border: 1px solid var(--border-subtle); font-weight: 600;">120 CHF</td>
+                            <td style="padding: 1rem; text-align: center; border: 1px solid var(--border-subtle); font-weight: 600;">130 CHF</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-subtle); background: rgba(245, 241, 237, 0.5);">
+                            <td style="padding: 1rem; border: 1px solid var(--border-subtle); font-weight: 600; color: var(--accent-gold);">Muguet</td>
+                            <td style="padding: 1rem; border: 1px solid var(--border-subtle);">
+                                <strong>Chambre Double</strong><br>
+                                ✓ Salle de bain privative<br>
+                                ✓ Machine à Café<br>
+                                ✓ Bouilloire<br>
+                                ✓ Wi-Fi
+                            </td>
+                            <td style="padding: 1rem; text-align: center; border: 1px solid var(--border-subtle); font-weight: 600;">120 CHF</td>
+                            <td style="padding: 1rem; text-align: center; border: 1px solid var(--border-subtle); font-weight: 600;">130 CHF</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 1rem; border: 1px solid var(--border-subtle); font-weight: 600; color: var(--accent-gold);">Coquelicot</td>
+                            <td style="padding: 1rem; border: 1px solid var(--border-subtle);">
+                                <strong>Chambre Triple</strong><br>
+                                ✓ Salle de bain privative<br>
+                                ✓ Machine à Café<br>
+                                ✓ Bouilloire<br>
+                                ✓ Wi-Fi
+                            </td>
+                            <td style="padding: 1rem; text-align: center; border: 1px solid var(--border-subtle); font-weight: 600;">130 CHF</td>
+                            <td style="padding: 1rem; text-align: center; border: 1px solid var(--border-subtle); font-weight: 600;">140 CHF</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PETIT DÉJEUNER -->
+            <div style="margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(160, 130, 109, 0.05)); border-radius: 8px; border-left: 4px solid var(--accent-gold);">
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 1rem; color: var(--primary-dark);">PETIT DÉJEUNER</h3>
+                <p style="margin-bottom: 1rem;"><strong>Sur demande : 12 CHF par personne</strong></p>
+                <p style="margin-bottom: 1rem;">
+                    Le petit-déjeuner est proposé en supplément, sur réservation. Afin de vous offrir confort et liberté, nous mettons à votre disposition, directement dans le réfrigérateur de votre chambre, tout le nécessaire pour bien commencer la journée :
                 </p>
-                <p style="font-weight: 500;">— La Famille Allegra</p>
+                <div style="margin-left: 1rem; margin-bottom: 1rem;">
+                    <p>✓ Plum-cake</p>
+                    <p>✓ Œuf dur</p>
+                    <p>✓ Jambon et fromage</p>
+                    <p>✓ Pain</p>
+                    <p>✓ Petites confitures</p>
+                    <p>✓ Yaourt et jus de fruits</p>
+                </div>
+                <p style="margin-bottom: 0.5rem;">
+                    Une machine à café ainsi qu'une bouilloire accompagnée d'une sélection de thés sont également à votre disposition dans chaque chambre, pour savourer une boisson chaude à tout moment.
+                </p>
+                <p style="font-style: italic; color: var(--accent-warm);">
+                    Une solution pratique et conviviale, idéale pour profiter d'un réveil en toute tranquillité, à votre rythme.
+                </p>
+            </div>
+
+            <!-- TARIFS SPÉCIAUX ET CONDITIONS -->
+            <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(245, 241, 237, 0.8); border-radius: 8px;">
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--primary-dark);">TARIFS SPÉCIAUX - SÉJOURS PROLONGÉS</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
+                        <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">3 à 6 Nuits</h4>
+                        <p style="margin-bottom: 0.5rem;"><strong>-10% de réduction</strong></p>
+                        <p style="font-size: 0.9rem; color: #666;">Nettoyage de chambre tous les 2 jours</p>
+                    </div>
+                    
+                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
+                        <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">7 à 13 Nuits</h4>
+                        <p style="margin-bottom: 0.5rem;"><strong>-15% de réduction</strong></p>
+                        <p style="font-size: 0.9rem; color: #666;">Nettoyage de chambre tous les 3 jours</p>
+                    </div>
+                    
+                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
+                        <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">14 à 30 Nuits</h4>
+                        <p style="margin-bottom: 0.5rem;"><strong>-20% de réduction</strong></p>
+                        <p style="font-size: 0.9rem; color: #666;">Nettoyage de chambre tous les 4 jours</p>
+                    </div>
+                    
+                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
+                        <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">1 Mois ou Plus</h4>
+                        <p style="margin-bottom: 0.5rem;"><strong>Tarif personnalisé</strong></p>
+                        <p style="font-size: 0.9rem; color: #666;">Nettoyage une fois par semaine</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INFORMATIONS IMPORTANTES -->
+            <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(160, 130, 109, 0.08); border-radius: 8px; border-left: 4px solid var(--accent-warm);">
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 1rem; color: var(--primary-dark);">INFORMATIONS IMPORTANTES</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.8rem; padding-left: 1.5rem;">
+                        <span style="color: var(--accent-gold); font-weight: bold;">✓</span> Tout extra sera facturé à la charge du client
+                    </li>
+                    <li style="margin-bottom: 0.8rem; padding-left: 1.5rem;">
+                        <span style="color: var(--accent-gold); font-weight: bold;">✓</span> Tous nos draps et lignes sont nettoyés et désinfectés par une buanderie externe
+                    </li>
+                    <li style="margin-bottom: 0.8rem; padding-left: 1.5rem;">
+                        <span style="color: var(--accent-gold); font-weight: bold;">✓</span> Les taxes de séjour s'élèvent à 7.- CHF par personne et par jour
+                    </li>
+                </ul>
+            </div>
+
+            <!-- BOUTON RÉSERVER -->
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="btn" onclick="showPage('contact'); window.scrollTo(0, 0);" style="font-size: 1.1rem; padding: 1rem 2rem;">
+                    📅 Réserver une Chambre
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE: ABOUT -->
+    <div id="about" class="page">
+        <div class="page-header">
+            <h1>À Propos</h1>
+            <p>La Famille Allegra à l'Auberge de la Charrue</p>
+        </div>
+        <div class="page-content">
+            <div style="font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary-dark);">À PROPOS</h2>
+                
+                <p style="margin-bottom: 1.2rem;">
+                    Le restaurant La Famille Allegra vous accueille à l'Auberge de la Charrue, située au cœur du charmant village de Romanel-sur-Lausanne. Dans notre auberge communale à gestion familiale, vous découvrirez une atmosphère chaleureuse, authentique et empreinte de passion. Elle reflète un savoir-faire transmis avec amour, ainsi qu'un profond attachement à la convivialité.
+                </p>
+
+                <p style="margin-bottom: 1.2rem;">
+                    Facilement accessible, notre établissement bénéficie d'un emplacement idéal, avec des places de parking à proximité et la gare du LEB à seulement quelques pas. Que vous soyez de passage dans la région ou à la recherche d'un lieu agréable pour partager un moment, tout est réuni pour vous offrir une expérience conviviale et sans contraintes.
+                </p>
+
+                <p style="margin-bottom: 1.2rem;">
+                    Nous vous invitons à découvrir une cuisine généreuse et sincère, mettant en valeur des produits de saison et de qualité, dans un cadre accueillant où simplicité et plaisir se rencontrent.
+                </p>
+
+                <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1.5rem; color: var(--primary-dark);">La Famille Allegra</h2>
+                
+                <p style="margin-bottom: 1.2rem;">
+                    La Famille Allegra, composée de cinq personnes, est unie par l'amour de la cuisine ainsi que par une passion commune pour l'accueil, le partage et l'hospitalité. Nos origines traversent toute l'Italie, du Nord au Centre jusqu'au Sud, apportant avec elles des traditions, des saveurs et des histoires uniques. Cette diversité fait notre richesse !
+                </p>
+
+                <p style="margin-bottom: 1.2rem;">
+                    Nous vous accueillons autour de nos tables avec le souhait de vous faire vivre un moment de plaisir, de convivialité et de découvertes gustatives. Chaque jour, nous mettons tout notre cœur et notre passion à votre service afin de vous offrir une expérience chaleureuse, alliant qualité, accueil attentionné et saveurs authentiques.
+                </p>
+
+                <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(160, 130, 109, 0.05)); border-radius: 8px;">
+                    <p style="font-style: italic; color: var(--accent-warm); margin-bottom: 0.8rem;">
+                        « À L'Auberge de la Charrue, chaque repas est une histoire que nous adorons raconter »
+                    </p>
+                    <p style="font-weight: 500;">— La Famille Allegra</p>
+                </div>
+            </div>
+
+            <!-- SECTION PHOTOS DE FAMILLE -->
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--border-subtle);">
+                <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 2rem; text-align: center; color: var(--primary-dark);">Nos Visages</h2>
+                
+                <!-- Parents -->
+                <div style="display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem; flex-wrap: wrap;">
+                    <div style="text-align: center;">
+                        <img src="Daniele_Allegra.png" alt="Daniele Allegra" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; display: block; border: 3px solid var(--accent-gold);">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 0.3rem;">DANIELE ALLEGRA</h3>
+                        <p style="color: var(--accent-warm); font-size: 0.9rem;">Chef</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="Milena_Fuschetto.png" alt="Milena Fuschetto" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; display: block; border: 3px solid var(--accent-gold);">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 0.3rem;">MILENA FUSCHETTO</h3>
+                        <p style="color: var(--accent-warm); font-size: 0.9rem;">Chef de l'hospitalité</p>
+                    </div>
+                </div>
+
+                <!-- Enfants -->
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                    <div style="text-align: center;">
+                        <img src="Riccardo_Pinna.png" alt="Riccardo Pinna" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; display: block; border: 3px solid var(--accent-gold);">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 0.3rem;">RICCARDO PINNA</h3>
+                        <p style="color: var(--accent-warm); font-size: 0.9rem;">Chef de cuisine</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="Letizia_Allegra.png" alt="Letizia Allegra" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; display: block; border: 3px solid var(--accent-gold);">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 0.3rem;">LETIZIA ALLEGRA</h3>
+                        <p style="color: var(--accent-warm); font-size: 0.9rem;">Chef service et pâtisserie</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="Adriano_Allegra.png" alt="Adriano Allegra" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; display: block; border: 3px solid var(--accent-gold);">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 0.3rem;">ADRIANO ALLEGRA</h3>
+                        <p style="color: var(--accent-warm); font-size: 0.9rem;">Chef de cuisine</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1407,52 +1591,102 @@
                 <div class="contact-box">
                     <h3>📍 Adresse</h3>
                     <p>
-                        L'Auberge de la Charrue<br>
-                        [Rue à compléter]<br>
-                        [Code Postal, Ville]<br>
+                        <strong>L'Auberge de la Charrue</strong><br>
+                        Place du Village 11<br>
+                        1261 Romanel-sur-Lausanne<br>
                         Suisse
+                    </p>
+                    <p style="margin-top: 0.8rem; font-size: 0.9rem; color: var(--accent-warm);">
+                        🅿️ Parking à disposition
                     </p>
                 </div>
 
                 <div class="contact-box">
                     <h3>📞 Téléphone</h3>
                     <p>
-                        <strong>+41 [numéro]</strong><br>
-                        Ouvert du lundi au dimanche<br>
-                        Réservations conseillées
+                        <strong><a href="tel:+41223666650" style="color: var(--text-dark); text-decoration: none;">+41 22 366 66 50</a></strong><br>
+                        <span style="font-size: 0.9rem; color: #999;">Disponible pour réservations et informations</span>
                     </p>
                 </div>
 
                 <div class="contact-box">
                     <h3>✉️ Email</h3>
                     <p>
-                        <a href="/cdn-cgi/l/email-protection#35565a5b4154564175544057504752505954565d54474740501b565d">
-                            à mettre adress mail
-                        </a>
+                        <a href="mailto:contact@aubergedlacharrue.ch" style="color: var(--accent-gold); text-decoration: none;">
+                            contact@aubergedlacharrue.ch
+                        </a><br>
+                        <span style="font-size: 0.9rem; color: #999;">Nous vous répondrons rapidement</span>
                     </p>
                 </div>
 
                 <div class="contact-box">
-                    <h3>🕐 Horaires</h3>
+                    <h3>🚗 Accès</h3>
                     <p>
-                        Lun - Dim: 11h30 - 22h00<br>
-                        Fermé le [jour à compléter]
+                        Gare du LEB à quelques pas<br>
+                        <span style="font-size: 0.9rem; color: #999;">Parking gratuit à proximité</span>
                     </p>
                 </div>
             </div>
 
+            <!-- HORAIRES DÉTAILLÉS -->
+            <div style="margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(160, 130, 109, 0.05)); border-radius: 8px; border-left: 4px solid var(--accent-gold);">
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--primary-dark);">NOS HORAIRES</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 0.8rem;">🌅 Lundi</h4>
+                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">7h30 - 14h30</p>
+                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">17h00 - 23h00</p>
+                    </div>
+
+                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid #e74c3c;">
+                        <h4 style="color: #e74c3c; margin-bottom: 0.8rem;">🚫 Mardi</h4>
+                        <p style="margin: 0.3rem 0; font-size: 0.95rem; font-weight: 600; color: #e74c3c;">FERMÉ</p>
+                    </div>
+
+                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 0.8rem;">🌅 Mercredi</h4>
+                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">7h30 - 14h30</p>
+                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">17h00 - 23h00</p>
+                    </div>
+
+                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 0.8rem;">🌅 Jeudi</h4>
+                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">7h30 - 14h30</p>
+                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">17h00 - 23h00</p>
+                    </div>
+
+                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 0.8rem;">🌅 Vendredi</h4>
+                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">7h30 - 14h30</p>
+                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">17h00 - 23h00</p>
+                    </div>
+
+                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 0.8rem;">🌅 Samedi</h4>
+                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">17h00 - 23h00</p>
+                    </div>
+
+                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 0.8rem;">☀️ Dimanche</h4>
+                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">8h30 - 22h00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORMULAIRE DE CONTACT -->
             <form class="contact-form" onsubmit="handleContactSubmit(event)">
                 <h3
-                    style="text-align: center; margin-bottom: 1.2rem; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;">
-                    Envoyez-nous un message</h3>
+                    style="text-align: center; margin-bottom: 1.2rem; margin-top: 2rem; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;">
+                    Envoyez-nous un Message</h3>
 
                 <div class="form-group">
-                    <label for="name">Nom</label>
+                    <label for="name">Nom *</label>
                     <input type="text" id="name" name="name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">Email *</label>
                     <input type="email" id="email" name="email" required>
                 </div>
 
@@ -1462,11 +1696,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <label for="subject">Sujet (optionnel)</label>
+                    <input type="text" id="subject" name="subject">
                 </div>
 
-                <button type="submit" class="btn" style="width: 100%; text-align: center;">Envoyer le Message</button>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required style="min-height: 120px;"></textarea>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; text-align: center; font-size: 1rem; padding: 0.8rem;">
+                    📧 Envoyer le Message
+                </button>
             </form>
         </div>
     </div>
