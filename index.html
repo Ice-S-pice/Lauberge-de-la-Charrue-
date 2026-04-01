@@ -1024,6 +1024,11 @@
                 font-size: 0.9rem;
             }
 
+            /* Offres du moment - responsive */
+            div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] {
+                grid-template-columns: 1fr !important;
+            }
+
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -1166,6 +1171,23 @@
             .suggestions-content h2 {
                 font-size: 1.5rem;
                 margin-bottom: 0.8rem;
+            }
+
+            /* Offres du moment - mobile */
+            section[style*="background: linear-gradient(135deg, rgba(184, 134, 11, 0.08)"] {
+                padding: 2rem 0.8rem !important;
+            }
+
+            section[style*="background: linear-gradient(135deg, rgba(184, 134, 11, 0.08)"] h2 {
+                font-size: 1.8rem !important;
+            }
+
+            div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] {
+                gap: 1rem !important;
+            }
+
+            div[style*="border-left: 4px solid"] {
+                padding: 1.5rem !important;
             }
 
             .suggestions-content p {
@@ -1543,6 +1565,139 @@
                 height: 130px !important;
             }
         }
+
+        /* ===== RESPONSIVE - SECTIONS DE PRÉSENTATION ===== */
+        @media (max-width: 768px) {
+            /* Sections de présentation (Menu, Vins, Suggestions) */
+            div[style*="max-width: 900px"] {
+                padding: 2rem 1rem !important;
+            }
+
+            div[style*="font-size: 1.05rem"] {
+                font-size: 0.95rem !important;
+                line-height: 1.7 !important;
+            }
+
+            div[style*="gap: 1.5rem; justify-content: center"] {
+                flex-direction: column !important;
+                gap: 1rem !important;
+            }
+
+            button[style*="padding: 0.8rem 2rem"] {
+                width: 100% !important;
+                padding: 0.8rem 1.5rem !important;
+            }
+
+            /* PDF Viewer responsive */
+            #pdfViewer {
+                margin-top: 65px;
+            }
+
+            #pdfViewerFrame {
+                height: 500px !important;
+            }
+
+            div[style*="height: 800px"] {
+                height: 500px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Sections de présentation - Ultra mobile */
+            div[style*="max-width: 900px"] {
+                padding: 1.5rem 0.8rem !important;
+            }
+
+            div[style*="font-size: 1.05rem"] {
+                font-size: 0.9rem !important;
+                line-height: 1.6 !important;
+            }
+
+            h2[style*="font-size: 2rem"] {
+                font-size: 1.5rem !important;
+            }
+
+            button[style*="padding: 0.8rem 2rem"] {
+                padding: 0.7rem 1.2rem !important;
+                font-size: 0.9rem !important;
+            }
+
+            /* PDF Viewer mobile */
+            #pdfViewerFrame {
+                height: 400px !important;
+            }
+
+            div[style*="display: flex; justify-content: center; align-items: center; min-height: 80vh"] {
+                min-height: 60vh !important;
+                padding: 1rem !important;
+            }
+        }
+
+        /* ===== RESPONSIVE - TEXTES ET TYPOGRAPHIE ===== */
+        @media (max-width: 768px) {
+            p[style*="margin-bottom: 1.5rem"] {
+                margin-bottom: 1rem !important;
+            }
+
+            h5[style*="margin-bottom: 0.8rem"] {
+                font-size: 1rem !important;
+            }
+        }
+
+        /* ===== RESPONSIVE - FORMULAIRES ET ENTRÉES ===== */
+        @media (max-width: 480px) {
+            input[class*="cms-modal-input"],
+            textarea[class*="cms-modal-input"] {
+                font-size: 16px !important; /* Évite le zoom sur iOS */
+            }
+        }
+
+        /* ===== RESPONSIVE - PAGES PDF VIEWER ===== */
+        @media (max-width: 768px) {
+            div[style*="background: var(--primary-dark); color: white; padding: 1.5rem"] {
+                padding: 1rem !important;
+                flex-direction: column !important;
+            }
+
+            div[style*="background: var(--primary-dark); color: white; padding: 1.5rem"] button {
+                width: 100% !important;
+                margin-top: 0.5rem !important;
+            }
+
+            div[style*="display: flex; justify-content: space-between; align-items: center"] h2 {
+                font-size: 1.2rem !important;
+            }
+        }
+
+        /* ===== RESPONSIVE - CONTENEURS GÉNÉRIQUES ===== */
+        @media (max-width: 768px) {
+            div[style*="display: flex; gap: 1.5rem"] {
+                flex-direction: column !important;
+            }
+
+            div[style*="max-width: 1200px"] {
+                padding: 1.5rem !important;
+            }
+        }
+
+        /* ===== AMÉLIORATION GÉNÉRALE MOBILE ===== */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .page-header {
+                padding: 1.5rem 1rem !important;
+            }
+
+            .page-header h1 {
+                word-break: break-word;
+            }
+
+            .page-header p {
+                word-break: break-word;
+            }
+        }
     </style>
 </head>
 
@@ -1583,7 +1738,64 @@
                     Découvrez une cuisine généreuse et authentique dans une atmosphère chaleureuse et conviviale.
                     Depuis des générations, la famille Allegra cultive l'art de recevoir et de régaler ses convives.
                 </p>
-                <button class="btn" onclick="showPage('menus');">🍽️ Découvrez notre Menu </button>
+                <button class="btn" onclick="showPage('menus');"> Découvrez notre Menu </button>
+            </div>
+        </section>
+
+        <!-- SECTION: OFFRES DU MOMENT -->
+        <section style="background: linear-gradient(135deg, rgba(184, 134, 11, 0.08) 0%, rgba(160, 130, 109, 0.05) 100%); padding: 4rem 2rem; margin: 0;">
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--primary-dark); text-align: center;">Nos Offres du Moment</h2>
+                <p style="text-align: center; color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 2rem; font-weight: 500;">Au quotidien et chaque semaine</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                    <!-- Offre Lundi-Vendredi Midi -->
+                    <div style="background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 4px 15px rgba(26, 20, 16, 0.1); border-left: 4px solid var(--accent-gold);">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 1rem;">Lundi à Vendredi<br><span style="font-size: 1.2rem; color: var(--text-dark);">À midi</span></h3>
+                        <div style="border-top: 2px solid var(--border-subtle); padding-top: 1rem;">
+                            <p style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                <strong>Suggestion Traditionnelle</strong><br>
+                                <span style="color: var(--accent-gold); font-weight: 600;">22,50 CHF</span>
+                            </p>
+                            <p style="margin-bottom: 0; font-size: 0.95rem; line-height: 1.6;">
+                                <strong>Suggestion Végétarienne</strong><br>
+                                <span style="color: var(--accent-gold); font-weight: 600;">20,50 CHF</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Offre Chaque Soir -->
+                    <div style="background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 4px 15px rgba(26, 20, 16, 0.1); border-left: 4px solid var(--accent-warm);">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--accent-warm); margin-bottom: 1rem;">Chaque Soir</h3>
+                        <div style="border-top: 2px solid var(--border-subtle); padding-top: 1rem;">
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-dark);">
+                                Une proposition du moment vient compléter notre carte, apportant une touche supplémentaire de gourmandise et de créativité.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Offre Dimanche -->
+                    <div style="background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 4px 15px rgba(26, 20, 16, 0.1); border-left: 4px solid var(--accent-gold);">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 1rem;">Le Dimanche</h3>
+                        <div style="border-top: 2px solid var(--border-subtle); padding-top: 1rem;">
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-dark);">
+                                <strong>Notre incontournable spécialité à la broche :</strong> Chaque semaine, une viande différente est mise à l'honneur, selon l'inspiration et la saison.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: white; border-radius: 8px; padding: 1.5rem 2rem; border-top: 3px solid var(--accent-gold); margin-bottom: 2rem;">
+                    <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-dark); margin: 0;">
+                        <strong>📍 Retrouvez nos propositions :</strong> Toutes nos suggestions du jour, ainsi que notre spécialité dominicale, sont annoncées sur nos réseaux sociaux et affichées chaque matin à l'extérieur de l'Auberge.
+                    </p>
+                </div>
+
+                <div style="background: linear-gradient(135deg, rgba(184, 134, 11, 0.05) 0%, rgba(160, 130, 109, 0.03) 100%); border-radius: 8px; padding: 1.5rem 2rem; text-align: center;">
+                    <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-dark); font-style: italic; margin: 0;">
+                        Nous nous réjouissons de vous surprendre jour après jour avec une cuisine faite maison, généreuse et authentique.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -1594,7 +1806,7 @@
                     frais de saison.</p>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <button class="btn" onclick="showPage('suggestions');">Voir les Suggestions</button>
-                    <button class="btn btn-secondary" onclick="showPage('menus');">⭐ Voir le Plat du Jour</button>
+                    <button class="btn btn-secondary" onclick="showPage('menus');"> Voir le Plat du Jour</button>
                 </div>
             </div>
         </section>
@@ -1617,8 +1829,28 @@
     <!-- PAGE: MENUS -->
     <div id="menus" class="page">
         <div class="page-header">
-            <h1>⭐ Plat du Jour & Notre Menus ⭐</h1>
-            <p>Sélection exclusive et raffinée</p>
+            <h1>Notre Menu</h1>
+            <p>Une cuisine qui évolue avec les saisons</p>
+        </div>
+
+        <!-- SECTION PRÉSENTATION DU MENU -->
+        <div class="page-content" style="background: linear-gradient(135deg, rgba(184, 134, 11, 0.04) 0%, rgba(160, 130, 109, 0.02) 100%); border-radius: 8px; padding: 3rem 2rem; margin-bottom: 3rem;">
+            <div style="max-width: 900px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8; color: var(--text-dark);">
+                <p style="margin-bottom: 1.5rem;">
+                    À l'Auberge de la Charrue, notre cuisine évolue au rythme des saisons. Quatre fois par an, notre carte se renouvelle afin de mettre à l'honneur des produits de saison, soigneusement sélectionnés pour leur fraîcheur et leur qualité. Chaque période de l'année devient une source d'inspiration : Des plats réconfortants en hiver aux saveurs légères et ensoleillées de l'été, en passant par la délicatesse du printemps et la richesse des couleurs automnales.
+                </p>
+                <p style="margin-bottom: 1.5rem;">
+                    Nous privilégions une cuisine sincère et gourmande, respectueuse des produits et des traditions, tout en y apportant une touche de créativité. Cette démarche nous permet de vous offrir une expérience culinaire toujours renouvelée, fidèle à l'esprit de notre maison.
+                </p>
+                <p style="margin-bottom: 2rem;">
+                    Nous vous invitons à découvrir notre carte actuelle et à vous laisser guider par les saveurs du moment.
+                </p>
+                <div style="text-align: center;">
+                    <button onclick="openPDFViewer('menu')" class="btn" style="background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm)); color: white; border: none; padding: 0.8rem 2rem; font-size: 1rem; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; font-family: 'Lora', serif;">
+                        Découvrir notre menu
+                    </button>
+                </div>
+            </div>
         </div>
         
         <!-- PLAT DU JOUR EN HAUT -->
@@ -1634,9 +1866,23 @@
     <!-- PAGE: SUGGESTIONS -->
     <div id="suggestions" class="page">
         <div class="page-header">
-            <h1>Suggestions du Moment</h1>
-            <p>Inspirées par les saisons et les meilleures récoltes</p>
+            <h1>Nos Suggestions</h1>
+            <p>Un plaisir éphémère !</p>
         </div>
+
+        <!-- SECTION PRÉSENTATION DES SUGGESTIONS -->
+        <div class="page-content" style="background: linear-gradient(135deg, rgba(184, 134, 11, 0.04) 0%, rgba(160, 130, 109, 0.02) 100%); border-radius: 8px; padding: 3rem 2rem; margin-bottom: 3rem;">
+            <div style="max-width: 900px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8; color: var(--text-dark);">
+                <p style="margin-bottom: 1.5rem;">
+                    En complément de notre carte de saison, nous vous proposons régulièrement des suggestions inspirées par des produits disponibles pour une durée limitée. Ces créations mettent à l'honneur des ingrédients soigneusement sélectionnés, au cœur de leur pleine saison.
+                </p>
+                <p style="margin-bottom: 1.5rem;">
+                    Élaborées avec passion, nos suggestions évoluent au fil des arrivages afin de vous offrir des découvertes gourmandes, au plus près du rythme de la nature. Laissez-vous tenter par ces propositions éphémères, pensées pour surprendre et éveiller vos papilles.
+                </p>
+            </div>
+        </div>
+
+        <!-- LISTE DES SUGGESTIONS -->
         <div class="page-content" id="suggestionsContent">
             <!-- Généré dynamiquement par JavaScript -->
         </div>
@@ -1648,8 +1894,39 @@
             <h1>Notre Carte des Vins</h1>
             <p>Sélection minutieuse de vignobles prestigieux</p>
         </div>
-        <div class="page-content" id="winesContent">
+
+        <!-- SECTION PRÉSENTATION DES VINS -->
+        <div class="page-content" style="background: linear-gradient(135deg, rgba(184, 134, 11, 0.04) 0%, rgba(160, 130, 109, 0.02) 100%); border-radius: 8px; padding: 3rem 2rem; margin-bottom: 3rem;">
+            <div style="max-width: 900px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8; color: var(--text-dark);">
+                <p style="margin-bottom: 1.5rem;">
+                    Cette carte des vins est née du désir d'accompagner notre cuisine avec des bouteilles capables de raconter des terroirs, des traditions et des passions. Nous avons sélectionné des vins exprimant caractère et authenticité, en privilégiant des producteurs engagés, respectueux de la terre et du climat.
+                </p>
+                <p style="margin-bottom: 1.5rem;">
+                    Chaque cuvée a été choisie pour dialoguer harmonieusement avec notre cuisine méditerranéenne, nos plats de brasserie, ainsi que nos moments les plus conviviaux, comme notre broche dominicale.
+                </p>
+                <p style="margin-bottom: 2rem;">
+                    À l'Auberge de la Charrue, chaque bouteille présentée dans ces pages s'inscrit dans un esprit de partage, de plaisir et de convivialité, où la joie d'être à table se mêle à celle de savourer un bon verre, au bon moment. Notre équipe se fera un plaisir de vous accompagner dans votre choix, afin que le vin devienne une véritable part de votre expérience chez nous.
+                </p>
+                <div style="text-align: center;">
+                    <button onclick="openPDFViewer('wines')" class="btn" style="background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm)); color: white; border: none; padding: 0.8rem 2rem; font-size: 1rem; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; font-family: 'Lora', serif;">
+                        Découvrez notre carte des vins
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION VINS À LA BOUTEILLE -->
+        <div class="page-content" id="winesContent" style="margin-bottom: 3rem;">
             <!-- Généré dynamiquement par JavaScript -->
+        </div>
+
+        <!-- SECTION VINS AU VERRE -->
+        <div class="page-content" style="background: linear-gradient(135deg, rgba(184, 134, 11, 0.03) 0%, rgba(160, 130, 109, 0.01) 100%); padding: 3rem 2rem; border-radius: 8px;">
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 0.5rem; color: var(--primary-dark); text-align: center;">🍷 Vins au Verre</h2>
+            <p style="text-align: center; color: var(--text-dark); margin-bottom: 2rem; font-size: 1rem;">Dégustez nos sélections à la coupe</p>
+            <div id="winesByGlassContent">
+                <!-- Généré dynamiquement par JavaScript -->
+            </div>
         </div>
     </div>
 
@@ -1887,6 +2164,19 @@
         </div>
     </div>
 
+    <!-- PAGE: PDF VIEWER -->
+    <div id="pdfViewer" class="page">
+        <div style="background: var(--primary-dark); color: white; padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 65px; z-index: 100;">
+            <h2 id="pdfViewerTitle" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;">PDF</h2>
+            <button onclick="closePDFViewer()" style="background: var(--accent-gold); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 4px; cursor: pointer; font-family: 'Lora', serif; font-weight: 500;">
+                ← Retour
+            </button>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; min-height: 80vh; background: #f0f0f0; padding: 2rem;">
+            <iframe id="pdfViewerFrame" style="width: 100%; height: 800px; border: none; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" src=""></iframe>
+        </div>
+    </div>
+
     <!-- PAGE: CONTACT -->
     <div id="contact" class="page">
         <div class="page-header">
@@ -1919,8 +2209,8 @@
                 <div class="contact-box">
                     <h3>✉️ Email</h3>
                     <p>
-                        <a href="mailto:contact@aubergedlacharrue.ch" style="color: var(--accent-gold); text-decoration: none;">
-                            contact@aubergedlacharrue.ch
+                        <a href="/cdn-cgi/l/email-protection#6e0d01001a0f0d1a2e0f1b0c0b1c090b0a020f0d060f1c1c1b0b400d06" style="color: var(--accent-gold); text-decoration: none;">
+                            <span class="__cf_email__" data-cfemail="e88b87869c898b9ca8899d8a8d9a8f8d8c84898b80899a9a9d8dc68b80">[email&#160;protected]</span>
                         </a><br>
                         <span style="font-size: 0.9rem; color: #999;">Nous vous répondrons rapidement</span>
                     </p>
@@ -2040,15 +2330,6 @@
             <button class="cms-panel-close" onclick="closeCMS()">✕</button>
         </div>
         <div class="cms-panel-content">
-            <!-- MENUS SECTION -->
-            <div class="cms-section">
-                <h4>📋 Menus</h4>
-                <div class="cms-item-list" id="cmsMenuList">
-                    <!-- Généré dynamiquement -->
-                </div>
-                <button class="cms-add-btn" onclick="openEditMenu(null)">+ Ajouter un Menu</button>
-            </div>
-
             <!-- SUGGESTIONS SECTION -->
             <div class="cms-section">
                 <h4>✨ Suggestions</h4>
@@ -2056,6 +2337,15 @@
                     <!-- Généré dynamiquement -->
                 </div>
                 <button class="cms-add-btn" onclick="openEditSuggestion(null)">+ Ajouter une Suggestion</button>
+            </div>
+
+            <!-- WINES BY GLASS SECTION -->
+            <div class="cms-section">
+                <h4>🍇 Vins au Verre</h4>
+                <div class="cms-item-list" id="cmsWinesByGlassList">
+                    <!-- Généré dynamiquement -->
+                </div>
+                <button class="cms-add-btn" onclick="openEditWineByGlass(null)">+ Ajouter un Vin au Verre</button>
             </div>
 
             <!-- DISH OF THE DAY SECTION -->
@@ -2067,13 +2357,25 @@
                 <button class="cms-add-btn" onclick="openEditDishOfTheDay()">✏️ Éditer le Plat du Jour</button>
             </div>
 
-            <!-- WINES SECTION -->
+            <!-- PDF MANAGEMENT SECTION -->
             <div class="cms-section">
-                <h4>🍷 Vins</h4>
-                <div class="cms-item-list" id="cmsWinesList">
-                    <!-- Généré dynamiquement -->
+                <h4>📄 Gestion des PDFs</h4>
+                <div style="margin-bottom: 1.5rem;">
+                    <h5 style="margin-bottom: 0.8rem; color: var(--accent-gold);">📋 PDF Menu</h5>
+                    <div id="menuPDFInfo" style="font-size: 0.9rem; margin-bottom: 0.8rem; color: #666;">
+                        Aucun PDF téléchargé
+                    </div>
+                    <input type="file" id="menuPDFInput" accept=".pdf" style="display: none;">
+                    <button class="cms-add-btn" onclick="document.getElementById('menuPDFInput').click()" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">Télécharger PDF Menu</button>
                 </div>
-                <button class="cms-add-btn" onclick="openEditWine(null)">+ Ajouter un Vin</button>
+                <div>
+                    <h5 style="margin-bottom: 0.8rem; color: var(--accent-gold);">🍷 PDF Carte des Vins</h5>
+                    <div id="winesPDFInfo" style="font-size: 0.9rem; margin-bottom: 0.8rem; color: #666;">
+                        Aucun PDF téléchargé
+                    </div>
+                    <input type="file" id="winesPDFInput" accept=".pdf" style="display: none;">
+                    <button class="cms-add-btn" onclick="document.getElementById('winesPDFInput').click()" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">Télécharger PDF Carte des Vins</button>
+                </div>
             </div>
 
             <!-- LOGOUT BUTTON -->
@@ -2112,6 +2414,23 @@
             <div class="cms-modal-buttons">
                 <button class="cms-btn-cancel" onclick="closeEditSuggestion()">Annuler</button>
                 <button class="cms-btn-submit" onclick="saveSuggestion()">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EDIT WINE BY GLASS MODAL -->
+    <div id="editWineByGlassModal" class="cms-modal">
+        <div class="cms-modal-content">
+            <button class="cms-modal-close" onclick="closeEditWineByGlass()">✕</button>
+            <h2 id="editWineByGlassTitle">Ajouter un Vin au Verre</h2>
+            <input type="text" id="wineByGlassName" class="cms-modal-input" placeholder="Nom du vin">
+            <input type="text" id="wineByGlassSubtitle" class="cms-modal-input" placeholder="Sous-titre">
+            <textarea id="wineByGlassDesc" class="cms-modal-input" placeholder="Description"
+                style="min-height: 80px; resize: vertical;"></textarea>
+            <input type="text" id="wineByGlassPrice" class="cms-modal-input" placeholder="Prix (ex: CHF 8)">
+            <div class="cms-modal-buttons">
+                <button class="cms-btn-cancel" onclick="closeEditWineByGlass()">Annuler</button>
+                <button class="cms-btn-submit" onclick="saveWineByGlass()">Enregistrer</button>
             </div>
         </div>
     </div>
@@ -2158,7 +2477,7 @@
         <p style="margin-top: 0.5rem; font-size: 0.85rem;"><span style="cursor: pointer; user-select: none;" onclick="validateDeletePassword()">©</span> 2026 Famille Allegra. Tous droits réservés.</p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // ===== SÉCURITÉ - CRYPTAGE SHA256 =====
         // Le mot de passe "nikmouk12!" est chiffré en SHA-256 (ONE-WAY)
         // Impossible de le retrouver même en inspectant le code
@@ -2176,6 +2495,7 @@
         let isCMSAuthenticated = false;
         let editingMenuIndex = null;
         let editingSuggestionIndex = null;
+        let editingWineByGlassIndex = null;
         let editingWineIndex = null;
 
         // Données par défaut
@@ -2192,28 +2512,40 @@
             { name: "Tarte Sablée aux Fruits Rouges", subtitle: "Crème pâtissière et coulis de framboise", desc: "Notre pâtisserie maison, garnie des fruits rouges les plus savoureux, un moment sucré à savourer avec délectation.", price: "CHF 14" }
         ];
 
-        let wines = [
-            { name: "Chasselas de Lavaux", subtitle: "Appellation d'Origine Contrôlée", desc: "Un grand blanc suisse, fruité et élégant, parfait avec nos poissons et fruits de mer.", price: "CHF 45" },
-            { name: "Petite Arvine du Valais", subtitle: "Riche et minéral", desc: "Un cépage noble du Valais, offrant une minéralité unique et des arômes complexes.", price: "CHF 52" },
-            { name: "Bourgogne Rouge AOC", subtitle: "Pinot Noir finesse", desc: "Élégance et finesse en bouteille, accompagne merveilleusement nos viandes.", price: "CHF 58" },
-            { name: "Bordeaux Supérieur", subtitle: "Sélection premium", desc: "Structure robuste et arômes profonds pour les moments festifs.", price: "CHF 65" }
+        let wines = [];
+
+        let winesByGlass = [
+            { name: "Chasselas du Lavaux", subtitle: "Blanc sec", desc: "Fruité et minéral, parfait en apéritif.", price: "CHF 7" },
+            { name: "Pinot Noir Valaisan", subtitle: "Rouge léger", desc: "Élégant et souple, accompagne de nombreux plats.", price: "CHF 8" }
         ];
 
         let dishOfTheDay = { name: 'Plat du jour', subtitle: 'À découvrir', desc: 'Demandez à notre équipe pour connaître le plat du jour', price: 'Sur demande' };
+
+        // Gestion des PDFs
+        let menuPDF = null;
+        let winesPDF = null;
 
         // Charger les données du localStorage
         function loadData() {
             const savedMenus = localStorage.getItem('auberge_menus');
             const savedSuggestions = localStorage.getItem('auberge_suggestions');
             const savedWines = localStorage.getItem('auberge_wines');
+            const savedWinesByGlass = localStorage.getItem('auberge_winesByGlass');
             const savedDishOfTheDay = localStorage.getItem('auberge_dishOfTheDay');
+            const savedMenuPDF = localStorage.getItem('auberge_menuPDF');
+            const savedWinesPDF = localStorage.getItem('auberge_winesPDF');
 
             if (savedMenus) menus = JSON.parse(savedMenus);
             if (savedSuggestions) suggestions = JSON.parse(savedSuggestions);
             if (savedWines) wines = JSON.parse(savedWines);
+            if (savedWinesByGlass) winesByGlass = JSON.parse(savedWinesByGlass);
             if (savedDishOfTheDay) dishOfTheDay = JSON.parse(savedDishOfTheDay);
+            if (savedMenuPDF) menuPDF = savedMenuPDF;
+            if (savedWinesPDF) winesPDF = savedWinesPDF;
 
             renderAllContent();
+            updatePDFLinks();
+            updatePDFInfo();
         }
 
         // Sauvegarder les données
@@ -2221,7 +2553,10 @@
             localStorage.setItem('auberge_menus', JSON.stringify(menus));
             localStorage.setItem('auberge_suggestions', JSON.stringify(suggestions));
             localStorage.setItem('auberge_wines', JSON.stringify(wines));
+            localStorage.setItem('auberge_winesByGlass', JSON.stringify(winesByGlass));
             localStorage.setItem('auberge_dishOfTheDay', JSON.stringify(dishOfTheDay));
+            if (menuPDF) localStorage.setItem('auberge_menuPDF', menuPDF);
+            if (winesPDF) localStorage.setItem('auberge_winesPDF', winesPDF);
         }
 
         // Afficher les menus, suggestions et vins
@@ -2229,6 +2564,7 @@
             renderDishOfTheDay();
             renderMenus();
             renderSuggestions();
+            renderWinesByGlass();
             renderWines();
         }
 
@@ -2276,6 +2612,22 @@
                     <div class="menu-item-price">${escapeHTML(suggestion.price)}</div>
                 </div>
             `).join('');
+        }
+
+        function renderWinesByGlass() {
+            const winesByGlassContent = document.getElementById('winesByGlassContent');
+            if (winesByGlassContent) {
+                winesByGlassContent.innerHTML = winesByGlass.map((wine, index) => `
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <h3>${escapeHTML(wine.name)}</h3>
+                            <p>${escapeHTML(wine.subtitle)}</p>
+                            <div class="menu-item-desc">${escapeHTML(wine.desc)}</div>
+                        </div>
+                        <div class="menu-item-price">${escapeHTML(wine.price)}</div>
+                    </div>
+                `).join('');
+            }
         }
 
         function renderWines() {
@@ -2401,19 +2753,6 @@
         }
 
         function renderCMSPanel() {
-            // Afficher les menus
-            const cmsMenuList = document.getElementById('cmsMenuList');
-            cmsMenuList.innerHTML = menus.map((menu, index) => `
-                <div class="cms-item">
-                    <h5>${escapeHTML(menu.name)}</h5>
-                    <p>${escapeHTML(menu.price)}</p>
-                    <div class="cms-item-buttons">
-                        <button class="cms-item-btn" onclick="openEditMenu(${index})">Modifier</button>
-                        <button class="cms-item-btn delete" onclick="deleteMenu(${index})">Supprimer</button>
-                    </div>
-                </div>
-            `).join('');
-
             // Afficher les suggestions
             const cmsSuggestionsList = document.getElementById('cmsSuggestionsList');
             cmsSuggestionsList.innerHTML = suggestions.map((suggestion, index) => `
@@ -2427,6 +2766,19 @@
                 </div>
             `).join('');
 
+            // Afficher les vins au verre
+            const cmsWinesByGlassList = document.getElementById('cmsWinesByGlassList');
+            cmsWinesByGlassList.innerHTML = winesByGlass.map((wine, index) => `
+                <div class="cms-item">
+                    <h5>${escapeHTML(wine.name)}</h5>
+                    <p>${escapeHTML(wine.price)}</p>
+                    <div class="cms-item-buttons">
+                        <button class="cms-item-btn" onclick="openEditWineByGlass(${index})">Modifier</button>
+                        <button class="cms-item-btn delete" onclick="deleteWineByGlass(${index})">Supprimer</button>
+                    </div>
+                </div>
+            `).join('');
+
             // Afficher le plat du jour
             const cmsDishOfTheDayList = document.getElementById('cmsDishOfTheDayList');
             cmsDishOfTheDayList.innerHTML = `
@@ -2436,19 +2788,6 @@
                     <p style="font-size: 0.85rem; color: #666; margin-top: 0.3rem;">${escapeHTML(dishOfTheDay.subtitle)}</p>
                 </div>
             `;
-
-            // Afficher les vins
-            const cmsWinesList = document.getElementById('cmsWinesList');
-            cmsWinesList.innerHTML = wines.map((wine, index) => `
-                <div class="cms-item">
-                    <h5>${escapeHTML(wine.name)}</h5>
-                    <p>${escapeHTML(wine.price)}</p>
-                    <div class="cms-item-buttons">
-                        <button class="cms-item-btn" onclick="openEditWine(${index})">Modifier</button>
-                        <button class="cms-item-btn delete" onclick="deleteWine(${index})">Supprimer</button>
-                    </div>
-                </div>
-            `).join('');
         }
 
         // ===== GESTION MENUS =====
@@ -2569,7 +2908,66 @@
             }
         }
 
-        // ===== GESTION VINS =====
+        // ===== GESTION VINS AU VERRE =====
+        function openEditWineByGlass(index) {
+            editingWineByGlassIndex = index;
+            const modal = document.getElementById('editWineByGlassModal');
+
+            if (index !== null) {
+                document.getElementById('editWineByGlassTitle').textContent = 'Modifier un Vin au Verre';
+                const wine = winesByGlass[index];
+                document.getElementById('wineByGlassName').value = wine.name;
+                document.getElementById('wineByGlassSubtitle').value = wine.subtitle;
+                document.getElementById('wineByGlassDesc').value = wine.desc;
+                document.getElementById('wineByGlassPrice').value = wine.price;
+            } else {
+                document.getElementById('editWineByGlassTitle').textContent = 'Ajouter un Vin au Verre';
+                document.getElementById('wineByGlassName').value = '';
+                document.getElementById('wineByGlassSubtitle').value = '';
+                document.getElementById('wineByGlassDesc').value = '';
+                document.getElementById('wineByGlassPrice').value = '';
+            }
+            modal.classList.add('active');
+        }
+
+        function closeEditWineByGlass() {
+            document.getElementById('editWineByGlassModal').classList.remove('active');
+            editingWineByGlassIndex = null;
+        }
+
+        function saveWineByGlass() {
+            const name = document.getElementById('wineByGlassName').value.trim();
+            const subtitle = document.getElementById('wineByGlassSubtitle').value.trim();
+            const desc = document.getElementById('wineByGlassDesc').value.trim();
+            const price = document.getElementById('wineByGlassPrice').value.trim();
+
+            if (!name || !subtitle || !desc || !price) {
+                alert('Tous les champs sont obligatoires');
+                return;
+            }
+
+            if (editingWineByGlassIndex !== null) {
+                winesByGlass[editingWineByGlassIndex] = { name, subtitle, desc, price };
+            } else {
+                winesByGlass.push({ name, subtitle, desc, price });
+            }
+
+            saveData();
+            renderAllContent();
+            renderCMSPanel();
+            closeEditWineByGlass();
+        }
+
+        function deleteWineByGlass(index) {
+            if (confirm('Êtes-vous sûr de vouloir supprimer ce vin au verre ?')) {
+                winesByGlass.splice(index, 1);
+                saveData();
+                renderAllContent();
+                renderCMSPanel();
+            }
+        }
+
+        // ===== GESTION VINS ====
         function openEditWine(index) {
             editingWineIndex = index;
             const modal = document.getElementById('editWineModal');
@@ -2660,11 +3058,115 @@
             closeEditDishOfTheDay();
         }
 
+        // ===== GESTION PDFs =====
+        function updatePDFLinks() {
+            // Les PDFs sont maintenant gérés par le système openPDFViewer
+        }
+
+        function updatePDFInfo() {
+            document.getElementById('menuPDFInfo').textContent = menuPDF ? '✓ PDF téléchargé' : 'Aucun PDF téléchargé';
+            document.getElementById('winesPDFInfo').textContent = winesPDF ? '✓ PDF téléchargé' : 'Aucun PDF téléchargé';
+        }
+
+        // Gestion des uploads PDF
+        function setupPDFEventListeners() {
+            const menuPDFInput = document.getElementById('menuPDFInput');
+            const winesPDFInput = document.getElementById('winesPDFInput');
+
+            if (menuPDFInput) {
+                menuPDFInput.addEventListener('change', function(e) {
+                    const file = e.target.files[0];
+                    if (file && file.type === 'application/pdf') {
+                        const reader = new FileReader();
+                        reader.onload = function(event) {
+                            menuPDF = event.target.result;
+                            saveData();
+                            updatePDFInfo();
+                            updatePDFLinks();
+                            alert('PDF Menu téléchargé avec succès !');
+                        };
+                        reader.readAsDataURL(file);
+                    } else {
+                        alert('Veuillez sélectionner un fichier PDF valide');
+                    }
+                });
+            }
+
+            if (winesPDFInput) {
+                winesPDFInput.addEventListener('change', function(e) {
+                    const file = e.target.files[0];
+                    if (file && file.type === 'application/pdf') {
+                        const reader = new FileReader();
+                        reader.onload = function(event) {
+                            winesPDF = event.target.result;
+                            saveData();
+                            updatePDFInfo();
+                            updatePDFLinks();
+                            alert('PDF Carte des Vins téléchargé avec succès !');
+                        };
+                        reader.readAsDataURL(file);
+                    } else {
+                        alert('Veuillez sélectionner un fichier PDF valide');
+                    }
+                });
+            }
+        }
+
         function logout() {
             if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
                 isCMSAuthenticated = false;
                 closeCMS();
             }
+        }
+
+        // ===== GESTION PDF VIEWER =====
+        let previousPageId = null;
+
+        function openPDFViewer(type) {
+            let pdfData = null;
+            let title = '';
+
+            if (type === 'menu') {
+                pdfData = menuPDF;
+                title = 'Notre Menu';
+            } else if (type === 'wines') {
+                pdfData = winesPDF;
+                title = 'Carte des Vins';
+            }
+
+            if (!pdfData) {
+                alert('Le PDF n\'est pas disponible. Veuillez contacter le gestionnaire du site.');
+                return;
+            }
+
+            // Sauvegarder la page précédente
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                if (page.classList.contains('active')) {
+                    previousPageId = page.id;
+                    page.classList.remove('active');
+                }
+            });
+
+            // Afficher le PDF viewer
+            document.getElementById('pdfViewerTitle').textContent = title;
+            document.getElementById('pdfViewerFrame').src = pdfData;
+            document.getElementById('pdfViewer').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function closePDFViewer() {
+            document.getElementById('pdfViewer').classList.remove('active');
+            document.getElementById('pdfViewerFrame').src = '';
+
+            // Retourner à la page précédente
+            if (previousPageId && document.getElementById(previousPageId)) {
+                document.getElementById(previousPageId).classList.add('active');
+            } else {
+                // Par défaut, revenir à l'accueil
+                document.getElementById('home').classList.add('active');
+            }
+            window.scrollTo(0, 0);
         }
 
         // ===== NAVIGATION =====
@@ -2727,6 +3229,7 @@
             }
             
             loadData();
+            setupPDFEventListeners();
         });
     </script>
 </body>
