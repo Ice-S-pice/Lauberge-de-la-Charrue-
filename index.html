@@ -16,7 +16,7 @@
         }
 
         :root {
-            --primary-dark: #1a1410;
+            --primary-dark: #5a5450;
             --primary-light: #f5f1ed;
             --accent-gold: #b8860b;
             --accent-warm: #a0826d;
@@ -282,7 +282,7 @@
 
         /* ===== SUGGESTIONS SECTION ===== */
         .suggestions-preview {
-            background: var(--primary-dark);
+            background: #3a3028;
             color: var(--text-light);
             padding: 4rem 1rem;
             margin: 3rem 0;
@@ -432,7 +432,7 @@
 
         /* ===== PAGE TEMPLATES ===== */
         .page-header {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #2d2520 100%);
+            background: linear-gradient(135deg, #3a3028 0%, #4a4035 100%);
             color: var(--text-light);
             padding: 3rem 1.5rem;
             text-align: center;
@@ -1787,7 +1787,7 @@
 
                 <div style="background: white; border-radius: 8px; padding: 1.5rem 2rem; border-top: 3px solid var(--accent-gold); margin-bottom: 2rem;">
                     <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-dark); margin: 0;">
-                        <strong>📍 Retrouvez nos propositions :</strong> Toutes nos suggestions du jour, ainsi que notre spécialité dominicale, sont annoncées sur nos réseaux sociaux et affichées chaque matin à l'extérieur de l'Auberge.
+                        <strong>Retrouvez nos propositions :</strong> Toutes nos suggestions du jour, ainsi que notre spécialité dominicale, sont annoncées sur nos réseaux sociaux et affichées chaque matin à l'extérieur de l'Auberge.
                     </p>
                 </div>
 
@@ -1833,6 +1833,33 @@
             <p>Une cuisine qui évolue avec les saisons</p>
         </div>
 
+        <!-- GALERIE DES PLATS SIGNATURES -->
+        <div class="page-content" style="padding: 2rem 1rem; margin-bottom: 3rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+                <!-- Image 1: Tortellone -->
+                <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(26, 20, 16, 0.1); transition: transform 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <img src="Tortellone.jpg" alt="Tortellone" style="width: 100%; height: 280px; object-fit: cover; display: block;">
+                    <div style="padding: 1.2rem; background: white; text-align: center;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--primary-dark); margin: 0;">Tortellone</h3>
+                    </div>
+                </div>
+                <!-- Image 2: Tartare Manzo -->
+                <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(26, 20, 16, 0.1); transition: transform 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <img src="Tartare_Manzo.jpg" alt="Tartare Manzo" style="width: 100%; height: 280px; object-fit: cover; display: block;">
+                    <div style="padding: 1.2rem; background: white; text-align: center;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--primary-dark); margin: 0;">Tartare Manzo</h3>
+                    </div>
+                </div>
+                <!-- Image 3: Effiloche d'agneau -->
+                <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(26, 20, 16, 0.1); transition: transform 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <img src="Effiloche_d_agneau.jpg" alt="Effiloche d'agneau" style="width: 100%; height: 280px; object-fit: cover; display: block;">
+                    <div style="padding: 1.2rem; background: white; text-align: center;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--primary-dark); margin: 0;">Effiloche d'agneau</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- SECTION PRÉSENTATION DU MENU -->
         <div class="page-content" style="background: linear-gradient(135deg, rgba(184, 134, 11, 0.04) 0%, rgba(160, 130, 109, 0.02) 100%); border-radius: 8px; padding: 3rem 2rem; margin-bottom: 3rem;">
             <div style="max-width: 900px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8; color: var(--text-dark);">
@@ -1870,17 +1897,33 @@
             <p>Un plaisir éphémère !</p>
         </div>
 
-        <!-- SECTION PRÉSENTATION DES SUGGESTIONS -->
-        <div class="page-content" style="background: linear-gradient(135deg, rgba(184, 134, 11, 0.04) 0%, rgba(160, 130, 109, 0.02) 100%); border-radius: 8px; padding: 3rem 2rem; margin-bottom: 3rem;">
-            <div style="max-width: 900px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8; color: var(--text-dark);">
-                <p style="margin-bottom: 1.5rem;">
-                    En complément de notre carte de saison, nous vous proposons régulièrement des suggestions inspirées par des produits disponibles pour une durée limitée. Ces créations mettent à l'honneur des ingrédients soigneusement sélectionnés, au cœur de leur pleine saison.
-                </p>
-                <p style="margin-bottom: 1.5rem;">
-                    Élaborées avec passion, nos suggestions évoluent au fil des arrivages afin de vous offrir des découvertes gourmandes, au plus près du rythme de la nature. Laissez-vous tenter par ces propositions éphémères, pensées pour surprendre et éveiller vos papilles.
-                </p>
+        <!-- SECTION PRÉSENTATION DES SUGGESTIONS AVEC IMAGE -->
+        <div class="page-content" style="margin-bottom: 3rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; max-width: 1200px; margin: 0 auto;">
+                <!-- Texte à gauche -->
+                <div style="background: linear-gradient(135deg, rgba(184, 134, 11, 0.04) 0%, rgba(160, 130, 109, 0.02) 100%); border-radius: 8px; padding: 2rem; font-size: 1.05rem; line-height: 1.8; color: var(--text-dark);">
+                    <p style="margin-bottom: 1.5rem;">
+                        En complément de notre carte de saison, nous vous proposons régulièrement des suggestions inspirées par des produits disponibles pour une durée limitée. Ces créations mettent à l'honneur des ingrédients soigneusement sélectionnés, au cœur de leur pleine saison.
+                    </p>
+                    <p style="margin-bottom: 1.5rem;">
+                        Élaborées avec passion, nos suggestions évoluent au fil des arrivages afin de vous offrir des découvertes gourmandes, au plus près du rythme de la nature. Laissez-vous tenter par ces propositions éphémères, pensées pour surprendre et éveiller vos papilles.
+                    </p>
+                </div>
+                <!-- Image à droite -->
+                <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 8px 25px rgba(26, 20, 16, 0.15); transition: transform 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                    <img src="Carpaccio_Loup_de_mer.jpg" alt="Carpaccio de Loup de Mer" style="width: 100%; height: auto; display: block;">
+                </div>
             </div>
         </div>
+
+        <!-- Responsive Adjustment -->
+        <style>
+            @media (max-width: 768px) {
+                .suggestions-grid {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+        </style>
 
         <!-- LISTE DES SUGGESTIONS -->
         <div class="page-content" id="suggestionsContent">
@@ -1893,6 +1936,13 @@
         <div class="page-header">
             <h1>Notre Carte des Vins</h1>
             <p>Sélection minutieuse de vignobles prestigieux</p>
+        </div>
+
+        <!-- IMAGE DES VINS EN TÊTE -->
+        <div class="page-content" style="padding: 1.5rem; margin-bottom: 2rem;">
+            <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 12px 35px rgba(26, 20, 16, 0.18); max-width: 1000px; margin: 0 auto;">
+                <img src="vin-lacharrue.jpg" alt="Notre Sélection de Vins" style="width: 100%; height: auto; display: block; object-fit: cover;">
+            </div>
         </div>
 
         <!-- SECTION PRÉSENTATION DES VINS -->
@@ -1922,7 +1972,7 @@
 
         <!-- SECTION VINS AU VERRE -->
         <div class="page-content" style="background: linear-gradient(135deg, rgba(184, 134, 11, 0.03) 0%, rgba(160, 130, 109, 0.01) 100%); padding: 3rem 2rem; border-radius: 8px;">
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 0.5rem; color: var(--primary-dark); text-align: center;">🍷 Vins au Verre</h2>
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 0.5rem; color: var(--primary-dark); text-align: center;">Vins au Verre</h2>
             <p style="text-align: center; color: var(--text-dark); margin-bottom: 2rem; font-size: 1rem;">Dégustez nos sélections à la coupe</p>
             <div id="winesByGlassContent">
                 <!-- Généré dynamiquement par JavaScript -->
@@ -2183,129 +2233,148 @@
             <h1>Nous Contacter</h1>
             <p>Nous serions ravi de vous accueillir</p>
         </div>
+
         <div class="page-content">
-            <div class="contact-grid">
-                <div class="contact-box">
-                    <h3>📍 Adresse</h3>
-                    <p>
-                        <strong>L'Auberge de la Charrue</strong><br>
-                        Place du Village 11<br>
-                        1261 Romanel-sur-Lausanne<br>
+            <!-- SECTION INFORMATIONS EN GRILLE -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem; max-width: 1200px; margin-left: auto; margin-right: auto;">
+                <!-- Adresse -->
+                <div style="background: linear-gradient(135deg, rgba(245, 241, 237, 1) 0%, rgba(240, 235, 230, 1) 100%); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--accent-gold); box-shadow: 0 4px 15px rgba(26, 20, 16, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(26, 20, 16, 0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(26, 20, 16, 0.08)'">
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 2px solid var(--accent-gold);">Adresse</h3>
+                    <p style="margin: 0.8rem 0; font-size: 0.95rem; color: var(--text-dark);">
+                        <strong>L'Auberge de la Charrue</strong>
+                    </p>
+                    <p style="margin: 0.5rem 0; font-size: 0.95rem; color: var(--text-dark);">
+                        Route d'Echallens 1<br>
+                        1032 Romanel-sur-Lausanne<br>
                         Suisse
                     </p>
-                    <p style="margin-top: 0.8rem; font-size: 0.9rem; color: var(--accent-warm);">
-                        🅿️ Parking à disposition
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--accent-warm); font-weight: 500;">
+                        Parking à disposition
                     </p>
                 </div>
 
-                <div class="contact-box">
-                    <h3>📞 Téléphone</h3>
-                    <p>
-                        <strong><a href="tel:+41223666650" style="color: var(--text-dark); text-decoration: none;">+41 22 366 66 50</a></strong><br>
-                        <span style="font-size: 0.9rem; color: #999;">Disponible pour réservations et informations</span>
+                <!-- Téléphone -->
+                <div style="background: linear-gradient(135deg, rgba(245, 241, 237, 1) 0%, rgba(240, 235, 230, 1) 100%); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--accent-gold); box-shadow: 0 4px 15px rgba(26, 20, 16, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(26, 20, 16, 0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(26, 20, 16, 0.08)'">
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 2px solid var(--accent-gold);">Téléphone</h3>
+                    <p style="margin: 0.8rem 0; font-size: 0.95rem; color: var(--text-dark);">
+                        <strong><a href="tel:+41216469900" style="color: var(--accent-gold); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--accent-warm)'" onmouseout="this.style.color='var(--accent-gold)'">(+41) 21 646 99 00</a></strong>
+                    </p>
+                    <p style="margin: 1rem 0; font-size: 0.9rem; color: #666;">
+                        Pour vos réservations et informations
                     </p>
                 </div>
 
-                <div class="contact-box">
-                    <h3>✉️ Email</h3>
-                    <p>
-                        <a href="/cdn-cgi/l/email-protection#6e0d01001a0f0d1a2e0f1b0c0b1c090b0a020f0d060f1c1c1b0b400d06" style="color: var(--accent-gold); text-decoration: none;">
-                            <span class="__cf_email__" data-cfemail="e88b87869c898b9ca8899d8a8d9a8f8d8c84898b80899a9a9d8dc68b80">[email&#160;protected]</span>
-                        </a><br>
-                        <span style="font-size: 0.9rem; color: #999;">Nous vous répondrons rapidement</span>
+                <!-- Email -->
+                <div style="background: linear-gradient(135deg, rgba(245, 241, 237, 1) 0%, rgba(240, 235, 230, 1) 100%); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--accent-gold); box-shadow: 0 4px 15px rgba(26, 20, 16, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(26, 20, 16, 0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(26, 20, 16, 0.08)'">
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 2px solid var(--accent-gold);">Email</h3>
+                    <p style="margin: 0.8rem 0; font-size: 0.95rem; color: var(--text-dark);">
+                        <a href="/cdn-cgi/l/email-protection#1d7e7273697c7e695d7c687f786f7a787978717c7e757c6f6f6878337e75" style="color: var(--accent-gold); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--accent-warm)'" onmouseout="this.style.color='var(--accent-gold)'"><span class="__cf_email__" data-cfemail="04676b6a70656770446571666176636160616865676c65767671612a676c">[email&#160;protected]</span></a>
+                    </p>
+                    <p style="margin: 1rem 0; font-size: 0.9rem; color: #666;">
+                        Nous répondons rapidement à votre message
                     </p>
                 </div>
 
-                <div class="contact-box">
-                    <h3>🚗 Accès</h3>
-                    <p>
-                        Gare du LEB à quelques pas<br>
-                        <span style="font-size: 0.9rem; color: #999;">Parking gratuit à proximité</span>
+                <!-- Accès -->
+                <div style="background: linear-gradient(135deg, rgba(245, 241, 237, 1) 0%, rgba(240, 235, 230, 1) 100%); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--accent-gold); box-shadow: 0 4px 15px rgba(26, 20, 16, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(26, 20, 16, 0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(26, 20, 16, 0.08)'">
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 2px solid var(--accent-gold);">Accès</h3>
+                    <p style="margin: 0.8rem 0; font-size: 0.95rem; color: var(--text-dark);">
+                        Gare du LEB à quelques pas
+                    </p>
+                    <p style="margin: 1rem 0; font-size: 0.9rem; color: #666;">
+                        Parking gratuit à proximité
                     </p>
                 </div>
             </div>
 
             <!-- HORAIRES DÉTAILLÉS -->
-            <div style="margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(160, 130, 109, 0.05)); border-radius: 8px; border-left: 4px solid var(--accent-gold);">
-                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--primary-dark);">NOS HORAIRES</h3>
+            <div style="margin: 3rem 0; padding: 2.5rem; background: linear-gradient(135deg, rgba(184, 134, 11, 0.08) 0%, rgba(160, 130, 109, 0.04) 100%); border-radius: 12px; border-top: 3px solid var(--accent-gold); border-bottom: 3px solid var(--accent-gold); max-width: 1200px; margin-left: auto; margin-right: auto;">
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 2rem; color: var(--primary-dark); text-align: center;">Nos Horaires d'Ouverture</h3>
                 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
-                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
-                        <h4 style="color: var(--primary-dark); margin-bottom: 0.8rem;">🌅 Lundi</h4>
-                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">7h30 - 14h30</p>
-                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">17h00 - 23h00</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.5rem;">
+                    <div style="padding: 1.5rem; background: white; border-radius: 8px; border-left: 4px solid var(--accent-gold); text-align: center; box-shadow: 0 2px 10px rgba(26, 20, 16, 0.05);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 1rem; font-weight: 600;">Lundi</h4>
+                        <p style="margin: 0.5rem 0; font-size: 0.9rem; color: var(--text-dark);">7h30 - 14h30</p>
+                        <p style="margin: 0.5rem 0; font-size: 0.9rem; color: var(--text-dark);">17h00 - 23h00</p>
                     </div>
 
-                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid #e74c3c;">
-                        <h4 style="color: #e74c3c; margin-bottom: 0.8rem;">🚫 Mardi</h4>
-                        <p style="margin: 0.3rem 0; font-size: 0.95rem; font-weight: 600; color: #e74c3c;">FERMÉ</p>
+                    <div style="padding: 1.5rem; background: #fff5f5; border-radius: 8px; border-left: 4px solid #e74c3c; text-align: center; box-shadow: 0 2px 10px rgba(231, 76, 60, 0.08);">
+                        <h4 style="color: #e74c3c; margin-bottom: 1rem; font-weight: 600;">Mardi</h4>
+                        <p style="margin: 0.5rem 0; font-size: 0.95rem; font-weight: 600; color: #e74c3c;">FERMÉ</p>
                     </div>
 
-                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
-                        <h4 style="color: var(--primary-dark); margin-bottom: 0.8rem;">🌅 Mercredi</h4>
-                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">7h30 - 14h30</p>
-                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">17h00 - 23h00</p>
+                    <div style="padding: 1.5rem; background: white; border-radius: 8px; border-left: 4px solid var(--accent-gold); text-align: center; box-shadow: 0 2px 10px rgba(26, 20, 16, 0.05);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 1rem; font-weight: 600;">Mercredi</h4>
+                        <p style="margin: 0.5rem 0; font-size: 0.9rem; color: var(--text-dark);">7h30 - 14h30</p>
+                        <p style="margin: 0.5rem 0; font-size: 0.9rem; color: var(--text-dark);">17h00 - 23h00</p>
                     </div>
 
-                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
-                        <h4 style="color: var(--primary-dark); margin-bottom: 0.8rem;">🌅 Jeudi</h4>
-                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">7h30 - 14h30</p>
-                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">17h00 - 23h00</p>
+                    <div style="padding: 1.5rem; background: white; border-radius: 8px; border-left: 4px solid var(--accent-gold); text-align: center; box-shadow: 0 2px 10px rgba(26, 20, 16, 0.05);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 1rem; font-weight: 600;">Jeudi</h4>
+                        <p style="margin: 0.5rem 0; font-size: 0.9rem; color: var(--text-dark);">7h30 - 14h30</p>
+                        <p style="margin: 0.5rem 0; font-size: 0.9rem; color: var(--text-dark);">17h00 - 23h00</p>
                     </div>
 
-                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
-                        <h4 style="color: var(--primary-dark); margin-bottom: 0.8rem;">🌅 Vendredi</h4>
-                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">7h30 - 14h30</p>
-                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">17h00 - 23h00</p>
+                    <div style="padding: 1.5rem; background: white; border-radius: 8px; border-left: 4px solid var(--accent-gold); text-align: center; box-shadow: 0 2px 10px rgba(26, 20, 16, 0.05);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 1rem; font-weight: 600;">Vendredi</h4>
+                        <p style="margin: 0.5rem 0; font-size: 0.9rem; color: var(--text-dark);">7h30 - 14h30</p>
+                        <p style="margin: 0.5rem 0; font-size: 0.9rem; color: var(--text-dark);">17h00 - 23h00</p>
                     </div>
 
-                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
-                        <h4 style="color: var(--primary-dark); margin-bottom: 0.8rem;">🌅 Samedi</h4>
-                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">17h00 - 23h00</p>
+                    <div style="padding: 1.5rem; background: white; border-radius: 8px; border-left: 4px solid var(--accent-gold); text-align: center; box-shadow: 0 2px 10px rgba(26, 20, 16, 0.05);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 1rem; font-weight: 600;">Samedi</h4>
+                        <p style="margin: 0.5rem 0; font-size: 0.9rem; color: var(--text-dark);">17h00 - 23h00</p>
                     </div>
 
-                    <div style="padding: 1rem; background: white; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
-                        <h4 style="color: var(--primary-dark); margin-bottom: 0.8rem;">☀️ Dimanche</h4>
-                        <p style="margin: 0.3rem 0; font-size: 0.95rem;">8h30 - 22h00</p>
+                    <div style="padding: 1.5rem; background: white; border-radius: 8px; border-left: 4px solid var(--accent-gold); text-align: center; box-shadow: 0 2px 10px rgba(26, 20, 16, 0.05);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 1rem; font-weight: 600;">Dimanche</h4>
+                        <p style="margin: 0.5rem 0; font-size: 0.9rem; color: var(--text-dark);">8h30 - 22h00</p>
                     </div>
                 </div>
             </div>
 
+            <!-- IMAGE DU BÂTIMENT -->
+            <div style="padding: 2rem 0; margin: 3rem 0;">
+                <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 15px 40px rgba(26, 20, 16, 0.2); max-width: 1000px; margin: 0 auto;">
+                    <img src="image_batiment.jpg" alt="L'Auberge de la Charrue" style="width: 100%; height: auto; display: block; object-fit: cover;">
+                </div>
+            </div>
+
             <!-- FORMULAIRE DE CONTACT -->
-            <form class="contact-form" onsubmit="handleContactSubmit(event)">
-                <h3
-                    style="text-align: center; margin-bottom: 1.2rem; margin-top: 2rem; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;">
-                    Envoyez-nous un Message</h3>
+            <div style="max-width: 700px; margin: 3rem auto; padding: 0;">
+                <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; text-align: center; margin-bottom: 2rem; color: var(--primary-dark);">Envoyez-nous un Message</h2>
+                <form class="contact-form" onsubmit="handleContactSubmit(event)" style="background: linear-gradient(135deg, rgba(245, 241, 237, 1) 0%, rgba(240, 235, 230, 0.5) 100%); padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(184, 134, 11, 0.2); box-shadow: 0 8px 25px rgba(26, 20, 16, 0.1);">
 
-                <div class="form-group">
-                    <label for="name">Nom *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="name" style="display: block; margin-bottom: 0.6rem; font-weight: 500; color: var(--primary-dark);">Nom *</label>
+                        <input type="text" id="name" name="name" required style="width: 100%; padding: 0.9rem 1rem; border: 1px solid var(--border-subtle); border-radius: 6px; font-family: 'Lora', serif; font-size: 0.95rem; transition: all 0.3s ease; background: white;" onfocus="this.style.borderColor='var(--accent-gold)'; this.style.boxShadow='0 0 0 3px rgba(184, 134, 11, 0.1)'" onblur="this.style.borderColor='var(--border-subtle)'; this.style.boxShadow='none'">
+                    </div>
 
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="email" style="display: block; margin-bottom: 0.6rem; font-weight: 500; color: var(--primary-dark);">Email *</label>
+                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.9rem 1rem; border: 1px solid var(--border-subtle); border-radius: 6px; font-family: 'Lora', serif; font-size: 0.95rem; transition: all 0.3s ease; background: white;" onfocus="this.style.borderColor='var(--accent-gold)'; this.style.boxShadow='0 0 0 3px rgba(184, 134, 11, 0.1)'" onblur="this.style.borderColor='var(--border-subtle)'; this.style.boxShadow='none'">
+                    </div>
 
-                <div class="form-group">
-                    <label for="phone">Téléphone (optionnel)</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="phone" style="display: block; margin-bottom: 0.6rem; font-weight: 500; color: var(--primary-dark);">Téléphone</label>
+                        <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.9rem 1rem; border: 1px solid var(--border-subtle); border-radius: 6px; font-family: 'Lora', serif; font-size: 0.95rem; transition: all 0.3s ease; background: white;" onfocus="this.style.borderColor='var(--accent-gold)'; this.style.boxShadow='0 0 0 3px rgba(184, 134, 11, 0.1)'" onblur="this.style.borderColor='var(--border-subtle)'; this.style.boxShadow='none'">
+                    </div>
 
-                <div class="form-group">
-                    <label for="subject">Sujet (optionnel)</label>
-                    <input type="text" id="subject" name="subject">
-                </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="subject" style="display: block; margin-bottom: 0.6rem; font-weight: 500; color: var(--primary-dark);">Sujet</label>
+                        <input type="text" id="subject" name="subject" style="width: 100%; padding: 0.9rem 1rem; border: 1px solid var(--border-subtle); border-radius: 6px; font-family: 'Lora', serif; font-size: 0.95rem; transition: all 0.3s ease; background: white;" onfocus="this.style.borderColor='var(--accent-gold)'; this.style.boxShadow='0 0 0 3px rgba(184, 134, 11, 0.1)'" onblur="this.style.borderColor='var(--border-subtle)'; this.style.boxShadow='none'">
+                    </div>
 
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" required style="min-height: 120px;"></textarea>
-                </div>
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <label for="message" style="display: block; margin-bottom: 0.6rem; font-weight: 500; color: var(--primary-dark);">Message *</label>
+                        <textarea id="message" name="message" required style="width: 100%; padding: 0.9rem 1rem; border: 1px solid var(--border-subtle); border-radius: 6px; font-family: 'Lora', serif; font-size: 0.95rem; min-height: 140px; transition: all 0.3s ease; background: white; resize: vertical;" onfocus="this.style.borderColor='var(--accent-gold)'; this.style.boxShadow='0 0 0 3px rgba(184, 134, 11, 0.1)'" onblur="this.style.borderColor='var(--border-subtle)'; this.style.boxShadow='none'"></textarea>
+                    </div>
 
-                <button type="submit" class="btn" style="width: 100%; text-align: center; font-size: 1rem; padding: 0.8rem;">
-                    📧 Envoyer le Message
-                </button>
-            </form>
+                    <button type="submit" style="width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm)); color: white; border: none; border-radius: 6px; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(184, 134, 11, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(184, 134, 11, 0.3)'">
+                        Envoyer le Message
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -2332,7 +2401,7 @@
         <div class="cms-panel-content">
             <!-- SUGGESTIONS SECTION -->
             <div class="cms-section">
-                <h4>✨ Suggestions</h4>
+                <h4>Suggestions</h4>
                 <div class="cms-item-list" id="cmsSuggestionsList">
                     <!-- Généré dynamiquement -->
                 </div>
@@ -2350,7 +2419,7 @@
 
             <!-- DISH OF THE DAY SECTION -->
             <div class="cms-section">
-                <h4>⭐ Plat du Jour</h4>
+                <h4> Plat du Jour</h4>
                 <div class="cms-item-list" id="cmsDishOfTheDayList">
                     <!-- Généré dynamiquement -->
                 </div>
@@ -2369,7 +2438,7 @@
                     <button class="cms-add-btn" onclick="document.getElementById('menuPDFInput').click()" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">Télécharger PDF Menu</button>
                 </div>
                 <div>
-                    <h5 style="margin-bottom: 0.8rem; color: var(--accent-gold);">🍷 PDF Carte des Vins</h5>
+                    <h5 style="margin-bottom: 0.8rem; color: var(--accent-gold);">PDF Carte des Vins</h5>
                     <div id="winesPDFInfo" style="font-size: 0.9rem; margin-bottom: 0.8rem; color: #666;">
                         Aucun PDF téléchargé
                     </div>
@@ -2477,7 +2546,7 @@
         <p style="margin-top: 0.5rem; font-size: 0.85rem;"><span style="cursor: pointer; user-select: none;" onclick="validateDeletePassword()">©</span> 2026 Famille Allegra. Tous droits réservés.</p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // ===== SÉCURITÉ - CRYPTAGE SHA256 =====
         // Le mot de passe "nikmouk12!" est chiffré en SHA-256 (ONE-WAY)
         // Impossible de le retrouver même en inspectant le code
@@ -2543,9 +2612,45 @@
             if (savedMenuPDF) menuPDF = savedMenuPDF;
             if (savedWinesPDF) winesPDF = savedWinesPDF;
 
+            // Charger les PDFs par défaut s'ils ne sont pas en localStorage
+            if (!menuPDF) {
+                loadDefaultPDF('Carte_de_lAuberge_de_la_Charrue.pdf', 'menu');
+            }
+            if (!winesPDF) {
+                loadDefaultPDF('Carte_des_VINS_1_Mars_2026.pdf', 'wines');
+            }
+
             renderAllContent();
             updatePDFLinks();
             updatePDFInfo();
+        }
+
+        // Charger un PDF par défaut
+        function loadDefaultPDF(filename, type) {
+            fetch(filename)
+                .then(response => {
+                    if (response.ok) {
+                        return response.blob();
+                    }
+                    throw new Error('PDF not found');
+                })
+                .then(blob => {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        if (type === 'menu') {
+                            menuPDF = event.target.result;
+                            localStorage.setItem('auberge_menuPDF', menuPDF);
+                        } else if (type === 'wines') {
+                            winesPDF = event.target.result;
+                            localStorage.setItem('auberge_winesPDF', winesPDF);
+                        }
+                        updatePDFInfo();
+                    };
+                    reader.readAsDataURL(blob);
+                })
+                .catch(error => {
+                    console.log('PDF par défaut non trouvé: ' + filename);
+                });
         }
 
         // Sauvegarder les données
@@ -2572,14 +2677,16 @@
             const dishContent = document.getElementById('dishOfTheDayContent');
             if (dishContent) {
                 dishContent.innerHTML = `
-                    <div class="menu-item" style="border: 3px solid var(--accent-gold); background: linear-gradient(135deg, rgba(184, 134, 11, 0.05) 0%, rgba(160, 130, 109, 0.03) 100%);">
-                        <div class="menu-item-content">
-                            <div>
-                                <h3 style="color: var(--accent-gold);">⭐ ${dishOfTheDay.name}</h3>
-                                <p class="menu-subtitle">${dishOfTheDay.subtitle}</p>
-                                <p class="menu-description">${dishOfTheDay.desc}</p>
+                    <div style="max-width: 800px; margin: 0 auto;">
+                        <div class="menu-item" style="border: 3px solid var(--accent-gold); background: linear-gradient(135deg, rgba(184, 134, 11, 0.08) 0%, rgba(160, 130, 109, 0.05) 100%); border-radius: 10px; padding: 3rem; box-shadow: 0 6px 20px rgba(184, 134, 11, 0.1);">
+                            <div class="menu-item-content">
+                                <div style="text-align: center; margin-bottom: 2rem;">
+                                    <h3 style="color: var(--accent-gold); font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 0.5rem;">${dishOfTheDay.name}</h3>
+                                    <p class="menu-subtitle" style="font-size: 1.1rem; color: var(--accent-warm); font-weight: 500; margin-bottom: 1.5rem;">${dishOfTheDay.subtitle}</p>
+                                    <p class="menu-description" style="font-size: 1rem; line-height: 1.6; color: var(--text-dark); margin-bottom: 1.5rem;">${dishOfTheDay.desc}</p>
+                                    <div class="menu-price" style="color: var(--accent-gold); font-weight: 600; font-size: 1.2rem;">${dishOfTheDay.price}</div>
+                                </div>
                             </div>
-                            <div class="menu-price" style="color: var(--accent-gold); font-weight: 600;">${dishOfTheDay.price}</div>
                         </div>
                     </div>
                 `;
@@ -2681,7 +2788,7 @@
                 closeCMSLogin();
                 openCMS();
             } else {
-                alert('❌ Mot de passe incorrect');
+                alert(' Mot de passe incorrect');
                 document.getElementById('cmsPassword').value = '';
                 document.getElementById('cmsPassword').focus();
             }
@@ -2735,7 +2842,7 @@
                     alert('✓ Le site a été DÉFINITIVEMENT fermé!\n\nTout a été supprimé:\n✗ Header\n✗ Navigation\n✗ Contenu\n✗ Données\n\nLe site restera vide pour toujours.');
                 }
             } else {
-                alert('❌ Mot de passe de suppression incorrect');
+                alert(' Mot de passe de suppression incorrect');
             }
         }
 
@@ -2783,7 +2890,7 @@
             const cmsDishOfTheDayList = document.getElementById('cmsDishOfTheDayList');
             cmsDishOfTheDayList.innerHTML = `
                 <div class="cms-item">
-                    <h5>⭐ ${escapeHTML(dishOfTheDay.name)}</h5>
+                    <h5>${escapeHTML(dishOfTheDay.name)}</h5>
                     <p>${escapeHTML(dishOfTheDay.price)}</p>
                     <p style="font-size: 0.85rem; color: #666; margin-top: 0.3rem;">${escapeHTML(dishOfTheDay.subtitle)}</p>
                 </div>
